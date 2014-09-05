@@ -1,5 +1,5 @@
 AlumniApp::Application.routes.draw do
-  root to: "events#index"
+  root to: "users#index"
 
   resources :messages
 
@@ -8,9 +8,9 @@ AlumniApp::Application.routes.draw do
 
   resources :events
 
-
   resources :groups
 
+  resources :users, except: :create
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
