@@ -3,8 +3,8 @@ AlumniApp::Application.routes.draw do
 
   resources :messages
 
-
-  devise_for :users
+  # Might not need the code after :users because it looked like the transistion from login to logout was working sufficiently before.
+  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout'}
 
   resources :events
 
