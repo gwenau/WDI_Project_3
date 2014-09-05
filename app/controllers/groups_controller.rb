@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
- 
+  before_filter :authenticate_user!, except: :index
 
   # GET /groups
   # GET /groups.json

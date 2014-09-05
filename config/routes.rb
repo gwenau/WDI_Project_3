@@ -1,4 +1,6 @@
 AlumniApp::Application.routes.draw do
+  root to: "events#index"
+
   resources :messages
 
 
@@ -9,7 +11,7 @@ AlumniApp::Application.routes.draw do
 
   resources :groups
 
-  root :to => "events#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
