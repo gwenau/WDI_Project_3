@@ -21,7 +21,8 @@
     <br>
     <%= link_to "Login", user_session_path %>
     <br>
-    <%#= link_to "Login with Google", user_omniauth_authorize_path(:google_oauth2) %>    
+    <!-- The below link should be redirected to google -->
+    <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>    
   <% end %>
 
   <!-- There as a flash message in the notes but it's probably not crucial -->
