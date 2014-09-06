@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :image %><br />
-    <%= f.text_area :image %>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :dob %><br />
@@ -38,6 +38,10 @@
     <div class="field">
     <%= f.label :cancan_role %><br />
     <%= f.text_field :cancan_role %>
+  </div>
+  <div class="field">
+    <%= f.label :personal_website %><br />
+    <%= f.text_field :personal_website %>
   </div>
   <div class="field">
     <%= f.label :github %><br />
@@ -70,6 +74,10 @@
   <div class="field">
     <%= f.label :postcode %><br />
     <%= f.text_field :postcode %>
+  </div>
+  <div class="field">
+    <%= f.label :display %><br />
+    <%= f.text_field :display %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -12,7 +12,7 @@
 
 <p>
   <b>Image:</b>
-  <%= @user.image %>
+  <%= image_tag @user.image.portrait.url %>
 </p>
 
 <p>
@@ -28,6 +28,11 @@
 <p>
   <b>Role:</b>
   <%= @user.role %>
+</p>
+
+<p>
+  <b>Personal Website:</b>
+  <%= @user.personal_website %>
 </p>
 
 <p>
@@ -49,7 +54,7 @@
   <b>Twitter:</b>
   <%= @user.twitter %>
 </p>
-
+<p><strong>Need to put in the if statement here to allow users to show if they want their contact details displayed.</strong></p>
 <p>
   <b>Address line 1:</b>
   <%= @user.address_line_1 %>

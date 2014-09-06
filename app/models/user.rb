@@ -5,12 +5,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :timeoutable, :omniauthable, :omniauth_providers => [:google_oauth2], :confirm_within => 10.minute
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :group_id, :name, :image, :dob, :mobile, :role, :cancan_role, :github, :linkedin, :facebook, :twitter, :address_line_1, :address_line_2, :city, :postcode, :provider, :uid, :personal_website, :display
   # attr_accessible :title, :body
+
+  mount_uploader :image, UserImageUploader
 
   belongs_to :group
   has_many :messages
   has_and_belongs_to_many :events
+
 
   def self.find_for_google_oauth2(auth, signed_in_user=nil)
     if user = signed_in_user || User.find_by_email(auth.info.email)
