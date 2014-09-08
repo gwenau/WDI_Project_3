@@ -5,15 +5,10 @@
   <%= @user.group_id %>
 </p>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Image:</b>
+<div id="main-profile-pic">
   <%= image_tag(@user.image) %>
-</p>
+</div>
+<h1><%= @user.name %></h1>
 
 <p>
   <b>Dob:</b>
