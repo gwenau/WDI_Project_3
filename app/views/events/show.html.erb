@@ -68,7 +68,15 @@
 </div>
 
 <div class="index-div">
-  <div>
+  <section class="left">
+    <div class="weather-api">
+      Weather API here again
+    </div>
+    <div id="text-messaging-area">
+      Text Messaging area
+    </div>
+  </section>
+  <div id="event-goers">
     <% @event.users.each do |user|%>
       <br>
       <%= user.name %>
