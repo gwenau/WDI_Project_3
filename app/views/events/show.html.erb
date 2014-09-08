@@ -72,7 +72,7 @@
   <% @event.users.each do |user|%>
     <br>
     <%= user.name %>
-    <%= user.image %>
+    <%= image_tag(user.image) %>
     <br>
   <% end %>
 </div>

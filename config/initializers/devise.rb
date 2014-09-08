@@ -10,7 +10,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'admin@alumi.com'
+  config.mailer_sender = 'admin@lumnee.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -127,7 +127,7 @@ Devise.setup do |config|
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
   config.remember_for = 1.hour #default 2.weeks 
-  config.timeout_in = 1.minute #default 30.minutes
+  config.timeout_in = 30.minute #default 30.minutes
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
