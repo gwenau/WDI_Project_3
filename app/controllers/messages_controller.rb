@@ -41,17 +41,21 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    @message = Message.new(params[:message])
+    TextMessage.new(params[:content], "00447475288100").send
+    # redirect_to event_path(@event.id) - I need help on the redirection.
 
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render json: @message, status: :created, location: @message }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
+
+    # @message = Message.new(params[:message])
+
+    # respond_to do |format|
+    #   if @message.save
+    #     format.html { redirect_to @message, notice: 'Message was successfully created.' }
+    #     format.json { render json: @message, status: :created, location: @message }
+    #   else
+    #     format.html { render action: "new" }
+    #     format.json { render json: @message.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PUT /messages/1

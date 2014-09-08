@@ -74,6 +74,14 @@
     </div>
     <div id="text-messaging-area">
       Text Messaging area
+      <h2>Send a text message !</h2>
+      <%= form_tag("/messages", method: "post") do %>
+        <%= hidden_field :event_id, :value => @event.id %>
+        <%#= hidden_field :user_id, :value =>@user.id %>
+        <%= label_tag(:content, "Message:") %>
+        <%= text_field_tag(:content )%>
+        <%= submit_tag("Send Message") %>
+      <% end %>
     </div>
   </section>
   <div id="event-goers">

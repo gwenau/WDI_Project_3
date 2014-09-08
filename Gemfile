@@ -11,6 +11,7 @@ gem 'omniauth-google-oauth2'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 gem 'mandrill-api'
+gem 'twilio-ruby'
 
 # Gems used only for assets and not required
 # in production environments by default.

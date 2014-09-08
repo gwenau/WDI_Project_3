@@ -1,7 +1,7 @@
 AlumniApp::Application.routes.draw do
   root to: "users#index"
 
-  resources :messages
+  resources :messages, only: [:new, :create]
 
   # Might not need the code after :users because it looked like the transistion from login to logout was working sufficiently before (:path_names => { :sign_in => 'login', :sign_out => 'logout'})
   devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout'}, controllers: { omniauth_callbacks: "omniauth_callbacks" }
