@@ -1,49 +1,48 @@
-<h1>Listing users</h1>
 
-<table>
-  <tr>
-    <th>Group</th>
-    <th>Name</th>
-    <th>Image</th>
-    <th>Dob</th>
-    <th>Mobile</th>
-    <th>Role</th>
-    <th>Github</th>
-    <th>Linkedin</th>
-    <th>Facebook</th>
-    <th>Twitter</th>
-    <th>Address line 1</th>
-    <th>Address line 2</th>
-    <th>City</th>
-    <th>Postcode</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.group_id %></td>
-    <td><%= user.name %></td>
-    <td><%= image_tag(user.image) %></td>
-    <td><%= user.dob %></td>
-    <td><%= user.mobile %></td>
-    <td><%= user.role %></td>
-    <td><%= user.github %></td>
-    <td><%= user.linkedin %></td>
-    <td><%= user.facebook %></td>
-    <td><%= user.twitter %></td>
-    <td><%= user.address_line_1 %></td>
-    <td><%= user.address_line_2 %></td>
-    <td><%= user.city %></td>
-    <td><%= user.postcode %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
+<div class="index-div">
+    <h1>Listing users</h1>
+    <%= link_to 'New User', new_user_path %>
+    <table>
+      <tr>
+        <th>Group</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Dob</th>
+        <th>Mobile</th>
+        <th>Role</th>
+        <th>Github</th>
+        <th>Linkedin</th>
+        <th>Facebook</th>
+        <th>Twitter</th>
+        <th>Address line 1</th>
+        <th>Address line 2</th>
+        <th>City</th>
+        <th>Postcode</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.group_id %></td>
+        <td><%= user.name %></td>
+        <td><%= image_tag(user.image) %></td>
+        <td><%= user.dob %></td>
+        <td><%= user.mobile %></td>
+        <td><%= user.role %></td>
+        <td><%= user.github %></td>
+        <td><%= user.linkedin %></td>
+        <td><%= user.facebook %></td>
+        <td><%= user.twitter %></td>
+        <td><%= user.address_line_1 %></td>
+        <td><%= user.address_line_2 %></td>
+        <td><%= user.city %></td>
+        <td><%= user.postcode %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+    <br />
+</div>

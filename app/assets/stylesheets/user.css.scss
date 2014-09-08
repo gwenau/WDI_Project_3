@@ -6,6 +6,13 @@ h1 {
   margin: 0px;
 }
 
+/* Login page */
+#login {
+  width: 1010px;
+  background-color: #7FFFD4;
+  margin: auto;
+}
+
 /* Main page pre div */
 #login-logoff-and-dropdown {
   width: 1010px;
@@ -60,14 +67,14 @@ h1 {
 }
 
 /* Events index page */
-#events-map-div {
+.events-map-container {
   width: 1010px;
   height: 300px;
   background-color: #F0E68C;
   margin: auto;
 }
 
-#event-index-div {
+.index-div {
   width: 1010px;
   background-color: #33CCFF;
   margin: auto;

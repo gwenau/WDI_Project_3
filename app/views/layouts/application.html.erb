@@ -24,8 +24,7 @@
       <br>
       <%= link_to "Login", user_session_path %>
       <br>
-      <!-- The below link should be redirected to google -->
-      <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>    
+      <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
     <% end %>
     <!-- Might not need the notice below, it was originally on the user page. -->
     <p id="notice"><%= notice %></p>
