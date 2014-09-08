@@ -2,8 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Main page first div */
+#user-page-container {
+  width: 1010px;
+  height: 450px;
+  background-color: brown;
+  margin: auto;
+}
+
 #main-profile-pic {
   width: 250px;
   height: 250px;
   background: black;
+}
+
+#left1 {
+  float: left;
+}
+
+#middle1 {
+  width: 360px;
+}
+
+#right1 {
+  float: right;
+  width: 360px;
+}
+
+/* Main page 2nd div */
+#user-upcoming-events {
+  width: 1010px;
+  height: 450px;
+  background-color: #330099;
+  margin: auto;
+}
+
+#weather-api {
+  width: 360px;
+  float: left;
+}
+
+#upcoming-eventsx2 {
+  width: 720px;
+  float: right;
 }
