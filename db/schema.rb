@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140905152554) do
+ActiveRecord::Schema.define(:version => 20140906055915) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(:version => 20140905152554) do
     t.string   "cancan_role"
     t.string   "provider"
     t.string   "uid"
+    t.string   "personal_website"
+    t.string   "display"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
