@@ -10,6 +10,33 @@
 </div>
 <h1><%= @user.name %></h1>
 
+<table>
+  <tr>
+    <td>
+      <a href="<%= @user.facebook %>"><img src="http://uxrepo.com/static/icon-sets/brandico/svg/facebook-rect.svg" alt="" height="50" width="50"></a>
+    </td>
+    <td>
+      <a href="<%= @user.github %>"><img src="http://www.jessesinfield.com/wp-content/themes/portfolioSite/images/github.png" alt="" height="54" width="54"></a>
+    </td>
+    <td>
+      <a href="<%= @user.twitter %>"><img src="http://uxrepo.com/static/icon-sets/font-awesome/svg/twitter-squared.svg" alt="" height="58" width="58"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="<%= @user.linkedin %>"><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/linkedin.svg" alt="" height="54" width="54  "></a>
+    </td>
+    <td>
+      <a href="<%= @user.personal_website %>"><img src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/globe.png" alt="" height="54" width="54"></a>
+    </td>
+    <td>
+      <a href="<%= @user.email %>"><img src="https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/612/aiga_mail_bg-512.png" alt="" height="54" width="54  "></a>
+    </td>
+  </tr>
+</table>
+
+<p><strong>Need to put in the if statement here to allow users to show if they want their contact details displayed.</strong></p>
+
 <p>
   <b>Dob:</b>
   <%= @user.dob %>
@@ -25,31 +52,6 @@
   <%= @user.role %>
 </p>
 
-<p>
-  <b>Personal Website:</b>
-  <%= @user.personal_website %>
-</p>
-
-<p>
-  <b>Github:</b>
-  <%= @user.github %>
-</p>
-
-<p>
-  <b>Linkedin:</b>
-  <%= @user.linkedin %>
-</p>
-
-<p>
-  <b>Facebook:</b>
-  <%= @user.facebook %>
-</p>
-
-<p>
-  <b>Twitter:</b>
-  <%= @user.twitter %>
-</p>
-<p><strong>Need to put in the if statement here to allow users to show if they want their contact details displayed.</strong></p>
 <p>
   <b>Address line 1:</b>
   <%= @user.address_line_1 %>
