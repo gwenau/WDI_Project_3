@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+h1 {
+  margin: 0px;
+}
+
 /* Main page pre div */
-#user-page-pre-main {
+#login-logoff-and-dropdown {
   width: 1010px;
   height: 50px;
   background-color: orange;
@@ -53,4 +57,18 @@
 #upcoming-eventsx2 {
   width: 720px;
   float: right;
+}
+
+/* Events index page */
+#events-map-div {
+  width: 1010px;
+  height: 300px;
+  background-color: #F0E68C;
+  margin: auto;
+}
+
+#event-index-div {
+  width: 1010px;
+  background-color: #33CCFF;
+  margin: auto;
 }
