@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* Main page pre div */
+#user-page-pre-main {
+  width: 1010px;
+  height: 50px;
+  background-color: orange;
+  margin: auto;
+}
+
 /* Main page first div */
-#user-page-container {
+#user-page-main-container {
   width: 1010px;
   height: 450px;
   background-color: brown;

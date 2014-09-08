@@ -7,25 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div id="user-page-pre-main">
 
-  <!-- Google links may need to be added here -->
- <% if user_signed_in? %>
-    <%= current_user.email %>
-    <br>
-    <%= link_to "Edit profile", edit_user_registration_path %>
-    <br>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %>
-    <br>
-    <%= link_to "Login", user_session_path %>
-    <br>
-    <!-- The below link should be redirected to google -->
-    <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>    
-  <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
+    <!-- Google links may need to be added here -->
+   <% if user_signed_in? %>
+      <%= current_user.email %>
+      <br>
+      <%= link_to "Edit profile", edit_user_registration_path %>
+      <br>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path %>
+      <br>
+      <%= link_to "Login", user_session_path %>
+      <br>
+      <!-- The below link should be redirected to google -->
+      <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>    
+    <% end %>
+    <!-- Might not need the notice below, it was originally on the user page. -->
+    <p id="notice"><%= notice %></p>
+  </div>
   <!-- There as a flash message in the notes but it's probably not crucial -->
 
   <%= yield %>
