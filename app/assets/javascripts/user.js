@@ -1,9 +1,9 @@
 (function() {
 
-  var app = angular.module('ngMap', ['ui.bootstrap', 'ngMap']);
+  var app = angular.module('lumneeApp', ['ui.bootstrap', 'ngMap']);
 
 // $http to call on the api's.
-  app.controller('LumneeController' , ["$scope", "$http", function($scope, $http) {
+  app.controller('lumneeController' , ["$scope", "$http", function($scope, $http) {
 
       // Temperature api currently hardcoded to London in degrees celcius
       $http.get("http://api.openweathermap.org/data/2.5/weather?q=London,uk&mode=json&units=metric").success(function(data){
@@ -50,7 +50,7 @@
       $scope.markerCluster = {}
       // mapsInitialized
       $scope.$on('mapsInitialized', function(event, maps) {
-        maps[0].setCenter("[-0.13,51.51]")
+        maps[0].setCenter()
       });
 
   }])
