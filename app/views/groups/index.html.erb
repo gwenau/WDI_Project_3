@@ -6,16 +6,17 @@
 <div class="group-group">
   <% @groups.each do |group| %>
     <div class="group-div">
-      <%= group.name %>
+      <h2><%= group.name %></h2> <%= link_to 'Show', group %> |
+      <%= link_to 'Edit', edit_group_path(group) %> |
+      <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div>
         <% group.users.each do |user| %>
-          <div id="event-goer">
+          <div class="event-goer">
             <%= image_tag(user.image, size: "100x100") %>
             <%= user.name %>
           </div>
         <% end %>
-      <%= link_to 'Show', group %> |
-      <%= link_to 'Edit', edit_group_path(group) %> |
-      <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
     </div>
   <% end %>
 </div>
