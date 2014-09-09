@@ -2,7 +2,7 @@
 <html ng-app="LumneeApp">
 <head>
   <title>Lumnee App</title>
-  
+  <script type="text/javascript" src="http://widgets.feedzilla.com/news/iframe/js/widget.js"></script>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -30,7 +30,7 @@
     <!-- Might not need the notice below, it was originally on the user and also on the event show page. -->
     <p id="notice"><%= notice %></p>
 
-    <!-- Drop down menu 1 (two does not work with the code for now so I may need to wrap it in a separate function. -->
+    <!-- Drop down menu 1 (two does not work with the code for now so I may need to wrap it in a separate function. Change to current user Id-->
     <div class="btn-group" dropdown is-open="status.isopen">
       <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
         Button dropdown <span class="caret"></span>
