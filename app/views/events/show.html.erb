@@ -1,70 +1,75 @@
 <div class="events-map-container">
-  <p>
-    <b>Name:</b>
-    <%= @event.name %>
-  </p>
+  <div id="event-map-left">
+    <p>
+      <b>Name:</b>
+      <%= @event.name %>
+    </p>
 
-  <p>
-    <b>Description:</b>
-    <%= @event.description %>
-  </p>
+    <p>
+      <b>Description:</b>
+      <%= @event.description %>
+    </p>
 
-  <p>
-    <b>Event date:</b>
-    <%= @event.event_date %>
-  </p>
+    <p>
+      <b>Event date:</b>
+      <%= @event.event_date %>
+    </p>
 
-  <p>
-    <b>Event time:</b>
-    <%= @event.event_time %>
-  </p>
+    <p>
+      <b>Event time:</b>
+      <%= @event.event_time %>
+    </p>
 
-  <p>
-    <b>Scope:</b>
-    <%= @event.scope %>
-  </p>
+    <p>
+      <b>Scope:</b>
+      <%= @event.scope %>
+    </p>
 
-  <p>
-    <b>Attendence required:</b>
-    <%= @event.attendence_required %>
-  </p>
+    <p>
+      <b>Attendence required:</b>
+      <%= @event.attendence_required %>
+    </p>
 
-  <p>
-    <b>Attending:</b>
-    <%= @event.attending %>
-  </p>
+    <p>
+      <b>Attending:</b>
+      <%= @event.attending %>
+    </p>
 
-  <p>
-    <b>Venue:</b>
-    <%= @event.venue %>
-  </p>
+    <p>
+      <b>Venue:</b>
+      <%= @event.venue %>
+    </p>
 
-  <p>
-    <b>Address line 1:</b>
-    <%= @event.address_line_1 %>
-  </p>
+    <p>
+      <b>Address line 1:</b>
+      <%= @event.address_line_1 %>
+    </p>
 
-  <p>
-    <b>Address line 2:</b>
-    <%= @event.address_line_2 %>
-  </p>
+    <p>
+      <b>Address line 2:</b>
+      <%= @event.address_line_2 %>
+    </p>
 
-  <p>
-    <b>City:</b>
-    <%= @event.city %>
-  </p>
+    <p>
+      <b>City:</b>
+      <%= @event.city %>
+    </p>
 
-  <p>
-    <b>Postcode:</b>
-    <%= @event.postcode %>
-  </p>
+    <p>
+      <b>Postcode:</b>
+      <%= @event.postcode %>
+    </p>
 
-  <p>
-    <b>Phone:</b>
-    <%= @event.phone %>
-  </p>
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path %>
+    <p>
+      <b>Phone:</b>
+      <%= @event.phone %>
+    </p>
+    <%= link_to 'Edit', edit_event_path(@event) %> |
+    <%= link_to 'Back', events_path %>
+  </div>
+  <div id="event-map-right">
+    <map style="display:block;height:300px" />
+  </div>
 </div>
 
 <div id="event-update-div">

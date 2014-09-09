@@ -1,6 +1,6 @@
 (function() {
 
-  var app = angular.module('LumneeApp', ['ui.bootstrap']);
+  var app = angular.module('ngMap', ['ui.bootstrap', 'ngMap']);
 
 // $http to call on the api's.
   app.controller('LumneeController' , ["$scope", "$http", function($scope, $http) {
@@ -31,20 +31,27 @@
         'And another choice for you.',
         'but wait! A third!'
       ];
-
       $scope.status = {
         isopen: false
       };
-
       $scope.toggled = function(open) {
         console.log('Dropdown is now: ', open);
       };
-
       $scope.toggleDropdown = function($event) {
         $event.preventDefault();
         $event.stopPropagation();
         $scope.status.isopen = !$scope.status.isopen;
       };
+
+      // Google maps
+      $scope.map
+      $scope.markers = {}
+      $scope.shapes = {}
+      $scope.markerCluster = {}
+      // mapsInitialized
+      $scope.$on('mapsInitialized', function(event, maps) {
+        maps[0].setCenter("[-0.13,51.51]")
+      });
 
   }])
 
