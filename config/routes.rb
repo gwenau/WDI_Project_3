@@ -10,7 +10,9 @@ AlumniApp::Application.routes.draw do
 
   resources :groups
 
-  resources :users, except: :create
+  resources :users, except: :create do
+    get 'page/:page', action: :index, on: :collection
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
