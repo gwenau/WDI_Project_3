@@ -121,8 +121,21 @@ p {
   margin: auto;
 }
 
-#event-goer {
+.event-goer {
   height: 120px;
   width: 335px;
   float: left;
 }
+
+/* Group page, hopefully waypoint only. */
+.group-header {
+  width: 1010px;
+  margin: auto;
+}
+
+.group-group {
+  width: 1010px;
+  margin: auto;
+}
+
+/* .event-goer added to each user */ 
