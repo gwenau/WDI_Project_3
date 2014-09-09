@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,  :confirmable, :timeoutable, :omniauthable, :omniauth_providers => [:google_oauth2], :confirm_within => 10.minute
+         :recoverable, :rememberable, :trackable, :validatable,  :omniauthable, :omniauth_providers => [:google_oauth2]#, :confirmable, :timeoutable,  :confirm_within => 10.minute
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :group_id, :name, :image, :dob, :mobile, :role, :cancan_role, :github, :linkedin, :facebook, :twitter, :address_line_1, :address_line_2, :city, :postcode, :provider, :uid, :personal_website, :display
