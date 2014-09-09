@@ -85,15 +85,29 @@ p {
 }
 
 /* Event show page */
-.left {
+#event-update-div {
+  width: 1010px;
+  margin: auto;
+  background-color: #F5F5DC;
+}
+
+#events-weather-api {
+  width: 505px;
   float: left;
 }
 
-#text-messaging-area {
-  width: 360px;
+#event-text-messaging-area {
+  width: 505px;
+  float: left;
 }
 
 #event-goers {
-  width: 650px;
-  float: right;
+  width: 1010px;
+  margin: auto;
+}
+
+#event-goer {
+  height: 120px;
+  width: 335px;
+  float: left;
 }

@@ -67,12 +67,12 @@
   <%= link_to 'Back', events_path %>
 </div>
 
-<div class="index-div">
-  <section class="left">
-    <div class="weather-api">
+<div id="event-update-div">
+  <div>
+    <div id="events-weather-api">
       Temperature in London: {{ weatherData }} degrees celsius
     </div>
-    <div id="text-messaging-area">
+    <div id="event-text-messaging-area">
       <h2>Send a text message !</h2>
       <%= form_tag("/messages", method: "post") do %>
         <%= hidden_field :event_id, :value => @event.id %>
@@ -82,13 +82,16 @@
         <%= submit_tag("Send Message") %>
       <% end %>
     </div>
-  </section>
+  </div>
+</div>
+
+<div class="index-div">
   <div id="event-goers">
     <% @event.users.each do |user|%>
-      <br>
-      <%= user.name %>
+      <div id="event-goer">
       <%= image_tag(user.image, size: "100x100") %>
-      <br>
+      <%= user.name %>
+      </div>
     <% end %>
   </div>
 </div>
