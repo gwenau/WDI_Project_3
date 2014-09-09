@@ -13,6 +13,9 @@
       // Carousel, currently programmed to displaying kittens.
       $scope.myInterval = 5000;
       $scope.slides = [];
+      
+
+
       $scope.addSlide = function() {
         var newWidth = 601 + $scope.slides.length;
         $scope.slides.push({

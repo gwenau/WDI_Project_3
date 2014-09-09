@@ -73,7 +73,6 @@
       Temperature in London: {{ weatherData }} degrees celsius
     </div>
     <div id="text-messaging-area">
-      Text Messaging area
       <h2>Send a text message !</h2>
       <%= form_tag("/messages", method: "post") do %>
         <%= hidden_field :event_id, :value => @event.id %>
@@ -88,7 +87,7 @@
     <% @event.users.each do |user|%>
       <br>
       <%= user.name %>
-      <%= image_tag(user.image) %>
+      <%= image_tag(user.image, size: "100x100") %>
       <br>
     <% end %>
   </div>
