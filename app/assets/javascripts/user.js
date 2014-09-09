@@ -13,9 +13,6 @@
       // Carousel, currently programmed to displaying kittens.
       $scope.myInterval = 5000;
       $scope.slides = [];
-      
-
-
       $scope.addSlide = function() {
         var newWidth = 601 + $scope.slides.length;
         $scope.slides.push({
@@ -24,10 +21,30 @@
             ['Cats', 'Kittys', 'Felines', 'Cutes'][$scope.slides.length % 4]
         });
       };
-
       for (var i=0; i<4; i++) {
         $scope.addSlide();
       }
+
+      // Drop down menu
+      $scope.items = [
+        'The first choice!',
+        'And another choice for you.',
+        'but wait! A third!'
+      ];
+
+      $scope.status = {
+        isopen: false
+      };
+
+      $scope.toggled = function(open) {
+        console.log('Dropdown is now: ', open);
+      };
+
+      $scope.toggleDropdown = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.status.isopen = !$scope.status.isopen;
+      };
 
   }])
 

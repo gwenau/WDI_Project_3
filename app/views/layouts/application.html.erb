@@ -29,6 +29,21 @@
     <% end %>
     <!-- Might not need the notice below, it was originally on the user and also on the event show page. -->
     <p id="notice"><%= notice %></p>
+
+    <!-- Drop down menu 1 (two does not work with the code for now so I may need to wrap it in a separate function. -->
+    <div class="btn-group" dropdown is-open="status.isopen">
+      <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+
   </div>
   <!-- There as a flash message in the notes but it's probably not crucial -->
   <div ng-controller="LumneeController">
