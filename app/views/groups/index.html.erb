@@ -13,7 +13,7 @@
         <% group.users.each do |user| %>
           <div class="event-goer">
             <%= image_tag(user.image, size: "100x100") %>
-            <%= user.name %>
+            <%= link_to user.name, user_path(user) %>
           </div>
         <% end %>
       </div>
