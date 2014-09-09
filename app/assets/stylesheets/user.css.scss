@@ -25,6 +25,15 @@ p {
   margin: auto;
 }
 
+#user-status {
+  width: 505px;
+  float: left
+}
+
+.btn-group {
+  float: right;
+}
+
 /* Main page first div */
 #user-page-main-container {
   width: 1010px;
@@ -61,12 +70,17 @@ p {
 }
 
 .weather-api {
-  width: 360px;
+  width: 250px;
+  float: left;
+  background-color: green;
+}
+
+#id {
   float: left;
 }
 
 #upcoming-eventsx2 {
-  width: 720px;
+  width: 650px;
   float: right;
 }
 
