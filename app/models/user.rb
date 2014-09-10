@@ -35,4 +35,9 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def role?(role)
+    self.role.to_s == role.to_s
+  end
+  
 end

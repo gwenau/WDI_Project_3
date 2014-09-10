@@ -6,9 +6,15 @@
 <div class="group-group">
   <% @groups.each do |group| %>
     <div class="group-div">
-      <h2><%= group.name %></h2> <%= link_to 'Show', group %> |
-      <%= link_to 'Edit', edit_group_path(group) %> |
-      <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <h2><%= group.name %></h2> 
+      <!-- consider taking out -->
+      <%#= link_to 'Show', group %>
+      <% if can? :edit, group %>
+        <%= link_to 'Edit', edit_group_path(group) %> |
+      <% end %>
+      <% if can? :delete, group %>
+        <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %> 
       <div>
         <% group.users.each do |user| %>
           <div class="event-goer">
