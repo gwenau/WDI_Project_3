@@ -91,25 +91,30 @@ p {
 }
 
 /* Events index page */
+
+
+/* Event show page */
 .events-map-container {
   width: 1010px;
   min-height: 300px;
   margin: auto;
 }
 
-/* Event show page */
-#event-update-div {
-  width: 1010px;
-  margin: auto;
-}
-
 #event-map-left {
   float: left;
+  background-color: white;
+  width: 410px;
+  height: 300px;
 }
 
 #event-map-right {
   float: right;
   width: 600px;
+}
+
+#event-update-div {
+  width: 1010px;
+  margin: auto;
 }
 
 #events-weather-api {
