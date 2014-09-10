@@ -17,27 +17,28 @@
 //= require_tree .
 
 
-$(document).ready(function(){    
+// $(document).ready(function(){    
 
-        $('form').on('submit', function(ev) {
-           ev.preventDefault();
-            console.log("here")
-            var ajaxOptions = {
-              url: '/chat.json',
-              type: 'POST',
-              data: {'username': $('#username').val(), 'message': $('#message').val(), 'since': $('#since').val()}
-               };
+//         $('form').on('submit', function(ev) {
+//            ev.preventDefault();
+//             console.log("here")
+//             console.log()
+//             var ajaxOptions = {
+//               url: '/chat.json',
+//               type: 'POST',
+//               data: {'username': $('#username').val(), 'message': $('#message').val(), 'since': $('#since').val()}
+//                };
 
-            $.ajax(ajaxOptions).success(function(data) {
-              console.log(data)
-            })
-            });
+//             $.ajax(ajaxOptions).success(function(data) {
+//               console.log(data)
+//             })
+//             });
       
-        // Chat app
-      function addLines(data) {
-        $.each(data, function(i, chatline) {
-          $('ul').append('<li><span class="username">&lt;' + chatline.username + "&gt;</span> <span class='message'>" + chatline.message + "</span>");
-        });
-      }
+//         // Chat app
+//       function addLines(data) {
+//         $.each(data, function(i, chatline) {
+//           $('ul').append('<li><span class="username">&lt;' + chatline.username + "&gt;</span> <span class='message'>" + chatline.message + "</span>");
+//         });
+//       }
     
-})
+// })

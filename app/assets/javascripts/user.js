@@ -54,7 +54,40 @@
       });
 
 
+      // Add Chat
+      $scope.chatlines = [];
+      $scope.newLine = false;
+
+      $http.get('/chats.json').success(function(data) {
+        $scope.chatlines = data;
+      })
+
+      $scope.addlines = function () {
+        console.log("newLine")
+        $http.post('/chat.json', { chatline: $scope.newLine}).success(function(data) {
+            $scope.chatlines.push(data)
+            $scope.newLine = false;
+            // $scope.stallForm.$setPristine()            
+          })
+      }
     
+      // Word shuffle 
+      // var word = document.getElementById('hidden');
+      // console.log(word.value)
+
+      // $scope.answer = []
+      // $scope.submitAnswer = function(){
+      //   console.log($scope.answer)
+      //   if ($scope.answer === word.value){
+      //     console.log("Correct!")
+      //     $scope.correct = true;
+      //     $scope.wrong = false;
+      //   } else {
+      //     console.log("Wrong!")
+      //     $scope.correct = false;
+      //     $scope.wrong = true;
+      //   }
+
 
   }])
 
