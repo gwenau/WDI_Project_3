@@ -96,12 +96,6 @@ p {
   margin: auto;
 }
 
-.index-div {
-  width: 1010px;
-  background-color: #33CCFF;
-  margin: auto;
-}
-
 /* Event show page */
 #event-update-div {
   width: 1010px;
@@ -130,6 +124,11 @@ p {
   background-color: orange;
 }
 
+.index-div {
+  width: 1010px;
+  margin: auto;
+}
+
 #event-goers {
   width: 1010px;
   margin: auto;
@@ -139,6 +138,9 @@ p {
   height: 120px;
   width: 335px;
   float: left;
+  background-color: white;  
+  font-size: 18px;
+  padding: 15px;
 }
 
 /* Group page, hopefully waypoint only. */
