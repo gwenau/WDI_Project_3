@@ -4,6 +4,7 @@
 
 body {
   background-color: #d9e7f4;
+  font-family: inherit;
 }
 
 h1 {
@@ -100,7 +101,6 @@ p {
 #event-update-div {
   width: 1010px;
   margin: auto;
-  background-color: #F5F5DC;
 }
 
 #event-map-left {
@@ -115,13 +115,16 @@ p {
 #events-weather-api {
   width: 505px;
   float: left;
-  background-color: orange;
+  background-color: #428bca;
+  font-size: 20px;
+  color: white;
 }
 
 #event-text-messaging-area {
   width: 505px;
   float: left;
-  background-color: orange;
+  background-color: #428bca;
+  color: white;
 }
 
 .index-div {
