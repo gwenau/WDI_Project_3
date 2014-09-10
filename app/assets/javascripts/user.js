@@ -1,7 +1,7 @@
 (function() {
 
   var app = angular.module('lumneeApp', ['ui.bootstrap', 'ngMap']);
-
+ 
 // $http to call on the api's.
   app.controller('lumneeController' , ["$scope", "$http", function($scope, $http) {
 
@@ -52,6 +52,9 @@
       $scope.$on('mapsInitialized', function(event, maps) {
         maps[0].setCenter()
       });
+
+
+    
 
   }])
 
