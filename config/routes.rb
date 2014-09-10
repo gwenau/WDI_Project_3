@@ -15,7 +15,7 @@ AlumniApp::Application.routes.draw do
   end
   
   get "/chat", to: "chat#index"
-  post "/chat", to: "chat#index"
+  post "/chat", to: "chat#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

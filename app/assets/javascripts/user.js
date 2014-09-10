@@ -55,38 +55,25 @@
 
 
       // Add Chat
-      $scope.chatlines = [];
-      $scope.newLine = false;
+      $scope.chatlines = [{username: "Mike", line: "Hello World"}];
+      // $scope.other = [];
 
-      $http.get('/chats.json').success(function(data) {
+      $http.get('/chat.json').success(function(data) {
         $scope.chatlines = data;
       })
 
-      $scope.addlines = function () {
-        console.log("newLine")
-        $http.post('/chat.json', { chatline: $scope.newLine}).success(function(data) {
+
+      $scope.addlines = function (chat) {
+        console.log("addLinesFunctionFired.")
+        console.log($scope.chat)
+        $scope.chatlines.push($scope.chat)
+        
+        
+        $http.post('/chat.json', { chatline: $scope.chat}).success(function(data) {
             $scope.chatlines.push(data)
-            $scope.newLine = false;
-            // $scope.stallForm.$setPristine()            
+            $scope.chat = false        
           })
       }
-    
-      // Word shuffle 
-      // var word = document.getElementById('hidden');
-      // console.log(word.value)
-
-      // $scope.answer = []
-      // $scope.submitAnswer = function(){
-      //   console.log($scope.answer)
-      //   if ($scope.answer === word.value){
-      //     console.log("Correct!")
-      //     $scope.correct = true;
-      //     $scope.wrong = false;
-      //   } else {
-      //     console.log("Wrong!")
-      //     $scope.correct = false;
-      //     $scope.wrong = true;
-      //   }
 
 
   }])

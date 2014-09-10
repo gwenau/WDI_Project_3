@@ -1,28 +1,19 @@
 <h1>GAChat</h1>
 <p>Welcome to GAChat!</p>
-<!-- <form action="/chat" method="POST">
-  <input type="hidden" name="since" id="since" value="<%= Time.now().to_i %>" />
-  <label for="username">Username</label><input id="username" type="text" name="username" value="<%= @username %>" />
 
-  <ul class="chat">
-    <% @lines.each do |l| %>
-      <li><span class="username">&lt;<%= l[:username] %>&gt;</span> <span class="message"><%= l[:message] %></span></li>
-    <% end %>
-  </ul>
-  
-  <input type="text" name="message" id="message" placeholder="Type your message here..." value=" <%= @lines %>" /><input type="submit" name="submit" value="Send" />
-</form> -->
-
-<!-- Angular -->
-<%# @user do |user| %>
-  <form ng-submit="addlines()">  
+  <form ng-submit="addlines($scope.chat)">  
     <label>Name</label>  
-    <input type="text" ng-model="user.name" required /><br>
+    <input type="text" ng-model="chat.username" required /><br>
     <label>Chat message</label>  
-    <textarea ng-model="user.message"></textarea><br>  
+    <textarea ng-model="chat.line"></textarea><br>  
     <button>Submit</button>  
   </form>
-<%# end %>
-{{ chatlines  }}
+
+{{ chat }}
+<div ng-repeat="chat in chatlines">
+    {{ chat.username  }}  :  {{chat.line}}
+
+</div>
 
     <!-- Hackathon app -->
+
