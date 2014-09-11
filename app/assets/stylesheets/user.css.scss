@@ -104,14 +104,19 @@ p {
 #user-upcoming-events {
   width: 1010px;
   height: 450px;
-  background-color: #330099;
+  background-color: white;
   margin: auto;
+  border-left: 2px dotted #428bca;
+  border-bottom: 2px dotted #428bca;
+  border-right: 2px dotted #428bca;
 }
 
 .weather-api {
   width: 250px;
   float: left;
-  background-color: green;
+  margin-left: 25px;
+  font-size: 30px;
+  text-align: center;
 }
 
 #id {
@@ -121,9 +126,13 @@ p {
 #upcoming-eventsx2 {
   width: 650px;
   float: right;
-  color: white;
+  color: black;
+  font-size: 20px;
 }
 
+#rss {
+  margin-left: 25px;
+}
 /* Events index page */
 
 
