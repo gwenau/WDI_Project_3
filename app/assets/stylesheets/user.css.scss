@@ -133,8 +133,11 @@ p {
 #rss {
   margin-left: 25px;
 }
-/* Events index page */
 
+/* Events index page */
+.event-individual {
+  border: 2px dotted #428bca;
+}
 
 /* Event show page */
 .events-map-container {

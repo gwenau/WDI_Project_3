@@ -5,26 +5,28 @@
     <h1>Listing events</h1>
     <%= link_to 'New Event', new_event_path %>
     <table>
-    <% @events.each do |event| %>
-      <tr>
-        <td>
-            Image or carousel of images.
-        </td>
-        <td>
-            <h3><%= event.name %></h3>
-            <%= event.event_date %><br />
-            <%= event.event_time %><br />
-            <%= event.venue %><br />
-            <!-- consider putting in scope in here -->
-            Consider putting in returning
-            <%= event.attending %>
-        </td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+        <% @events.each do |event| %>
+          <tr class="event-individual">
+        
+            <td>
+                Image or carousel of images.
+            </td>
+            <td>
+                <h3><%= event.name %></h3>
+                <%= event.event_date %><br />
+                <%= event.event_time %><br />
+                <%= event.venue %><br />
+                <!-- consider putting in scope in here -->
+                Consider putting in returning
+                <%= event.attending %>
+            </td>
+            <td><%= link_to 'Show', event %></td>
+            <td><%= link_to 'Edit', edit_event_path(event) %></td>
+            <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
     </table>
-
-
 </div>
+<br>
+<br>
+<br>
