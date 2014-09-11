@@ -31,14 +31,18 @@
         Menu<span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="/users/<%= current_user.id %>">My Page</a></li>
+        <% if user_signed_in? %>
+          <li><a href="/users/<%= current_user.id %>">My Page</a></li>
+        <% end %>
         <li><a href="/events">Events</a></li>
         <li><a href="/groups">Groups</a></li>
         <li><a href="/users">Users</a></li>
         <li class="divider"></li>
         <li><a href="/chats">Chat</a></li>
-        <li class="divider"></li>
-        <li><a href="/users/<% current_user.id %>/edit">Edit Profile</a></li>
+        <% if user_signed_in? %>
+          <li class="divider"></li>
+          <li><a href="/users/<% current_user.id %>/edit">Edit Profile</a></li>
+        <% end %>
       </ul>
     </div>
 
