@@ -33,8 +33,7 @@
     Introduction to the event
   </div>
   <div id="right1">
-    Past Events Pictures Carousell here.
-    <div style="height: 305px">
+    <div style="height: 500px">
       <carousel interval="myInterval">
         <slide ng-repeat="slide in slides" active="slide.active">
           <img ng-src="{{slide.image}}" style="margin:auto;">
@@ -46,13 +45,9 @@
       </carousel>
     </div>
     <div class="row">
-      <div class="col-md-6">
+<!--       <div class="col-md-6">
         <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
-      </div>
-      <div class="col-md-6">
-        Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
-        <br />Enter a negative number to stop the interval.
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -89,50 +84,6 @@
   <!-- Feedzilla Widget END -->
 
 </div>
-
-
-
-<p><strong>Need to put in the if statement here to allow users to show if they want their contact details displayed. For example, if current user group is the same, display the information.</strong></p>
-
-  <p>
-    <b>Group:</b>
-    <%= @user.group_id %>
-  </p>
-
-  <p>
-    <b>Dob:</b>
-    <%= @user.dob %>
-  </p>
-
-  <p>
-    <b>Mobile:</b>
-    <%= @user.mobile %>
-  </p>
-
-  <p>
-    <b>Role:</b>
-    <%= @user.role %>
-  </p>
-
-  <p>
-    <b>Address line 1:</b>
-    <%= @user.address_line_1 %>
-  </p>
-
-  <p>
-    <b>Address line 2:</b>
-    <%= @user.address_line_2 %>
-  </p>
-
-  <p>
-    <b>City:</b>
-    <%= @user.city %>
-  </p>
-
-  <p>
-    <b>Postcode:</b>
-    <%= @user.postcode %>
-  </p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
