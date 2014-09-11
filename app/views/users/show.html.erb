@@ -3,32 +3,36 @@
     <div id="main-profile-pic">
       <%= image_tag(@user.image) %>
     </div>
-    <h1><%= @user.name %></h1>
-    <table>
-      <tr>
-        <td>
-          <a href="<%= @user.facebook %>" target="_blank"><img src="http://uxrepo.com/static/icon-sets/brandico/svg/facebook-rect.svg" alt="" height="50" width="50"></a>
-        </td>
-        <td>
-          <a href="<%= @user.github %>" target="_blank"><img src="http://www.jessesinfield.com/wp-content/themes/portfolioSite/images/github.png" alt="" height="54" width="54"></a>
-        </td>
-        <td>
-          <a href="<%= @user.twitter %>" target="_blank"><img src="http://uxrepo.com/static/icon-sets/font-awesome/svg/twitter-squared.svg" alt="" height="58" width="58"></a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="<%= @user.linkedin %>" target="_blank"><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/linkedin.svg" alt="" height="54" width="54  "></a>
-        </td>
-        <td>
-          <a href="<%= @user.personal_website %>" target="_blank"><img src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/globe.png" alt="" height="54" width="54"></a>
-        </td>
-        <td>
-          <a href="<%= @user.email %>" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/612/aiga_mail_bg-512.png" alt="" height="54" width="54  "></a>
-        </td>
-      </tr>
-    </table>
-  </div>
+      <div class="move-left">
+        <h1><%= @user.name %></h1>
+          <div id="move-table-left">
+          <table>
+            <tr>
+              <td>
+                <a href="<%= @user.facebook %>" target="_blank"><img src="http://uxrepo.com/static/icon-sets/brandico/svg/facebook-rect.svg" alt="" height="50" width="50"></a>
+              </td>
+              <td>
+                <a href="<%= @user.github %>" target="_blank"><img src="http://www.jessesinfield.com/wp-content/themes/portfolioSite/images/github.png" alt="" height="54" width="54"></a>
+              </td>
+              <td>
+                <a href="<%= @user.twitter %>" target="_blank"><img src="http://uxrepo.com/static/icon-sets/font-awesome/svg/twitter-squared.svg" alt="" height="58" width="58"></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="<%= @user.linkedin %>" target="_blank"><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/linkedin.svg" alt="" height="54" width="54  "></a>
+              </td>
+              <td>
+                <a href="<%= @user.personal_website %>" target="_blank"><img src="https://cdn1.iconfinder.com/data/icons/windows-8-metro-style/512/globe.png" alt="" height="54" width="54"></a>
+              </td>
+              <td>
+                <a href="<%= @user.email %>" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/aiga-symbol-signs/612/aiga_mail_bg-512.png" alt="" height="54" width="54  "></a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
   <div id="middle1">
     Introduction to the event
   </div>
