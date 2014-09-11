@@ -1,3 +1,4 @@
+require 'pry-byebug'
 require 'json'
 
 class ChatController < ApplicationController
@@ -25,7 +26,7 @@ class ChatController < ApplicationController
   # POST /chat
   # POST /chat.json
   def create
-
+    @chat = params[:lines]
     binding.pry
 
       respond_to do |format|

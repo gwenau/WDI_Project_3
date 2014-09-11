@@ -1,4 +1,6 @@
 AlumniApp::Application.routes.draw do
+  resources :chats
+
   root to: "users#index"
 
   resources :messages, only: [:new, :create]
@@ -14,8 +16,8 @@ AlumniApp::Application.routes.draw do
     get 'page/:page', action: :index, on: :collection
   end
   
-  get "/chat", to: "chat#index"
-  post "/chat", to: "chat#create"
+  # get "/chat", to: "chat#index"
+  # post "/chat", to: "chat#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

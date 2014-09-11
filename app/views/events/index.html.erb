@@ -1,47 +1,30 @@
 <div class="events-map-container">
+    <map style="display:block;height:300px" />
 </div>
-<map style="display:block;height:300px" />
 <div class="index-div">
     <h1>Listing events</h1>
     <%= link_to 'New Event', new_event_path %>
     <table>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Event date</th>
-        <th>Event time</th>
-        <th>Scope</th>
-        <th>Attendence required</th>
-        <th>Attending</th>
-        <th>Venue</th>
-        <th>Address line 1</th>
-        <th>Address line 2</th>
-        <th>City</th>
-        <th>Postcode</th>
-        <th>Phone</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.name %></td>
-        <td><%= event.description %></td>
-        <td><%= event.event_date %></td>
-        <td><%= event.event_time %></td>
-        <td><%= event.scope %></td>
-        <td><%= event.attendence_required %></td>
-        <td><%= event.attending %></td>
-        <td><%= event.venue %></td>
-        <td><%= event.address_line_1 %></td>
-        <td><%= event.address_line_2 %></td>
-        <td><%= event.city %></td>
-        <td><%= event.postcode %></td>
-        <td><%= event.phone %></td>
+        <td>
+            Image or carousel of images.
+        </td>
+        <td>
+            <h3><%= event.name %></h3>
+            <%= event.event_date %><br />
+            <%= event.event_time %><br />
+            <%= event.venue %><br />
+            <!-- consider putting in scope in here -->
+            Consider putting in returning
+            <%= event.attending %>
+        </td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     </table>
+
+
 </div>
