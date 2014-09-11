@@ -4,7 +4,7 @@
   <title>Lumnee App</title>
   <script type="text/javascript" src="http://widgets.feedzilla.com/news/iframe/js/widget.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-  
+  <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -31,13 +31,14 @@
         Menu<span class="caret"></span>
       </button>
       <ul class="dropdown-menu" role="menu">
+        <li><a href="/users/<%= current_user.id %>">My Page</a></li>
         <li><a href="/events">Events</a></li>
         <li><a href="/groups">Groups</a></li>
         <li><a href="/users">Users</a></li>
         <li class="divider"></li>
-        <li><a href="/chat">Chat</a></li>
+        <li><a href="/chats">Chat</a></li>
         <li class="divider"></li>
-        <li><a href="#">Edit Profile</a></li>
+        <li><a href="/users/<% current_user.id %>/edit">Edit Profile</a></li>
       </ul>
     </div>
 
