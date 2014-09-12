@@ -250,6 +250,8 @@ p {
 .chat-selection {
   border: 1.5px solid #cfcfcf;
   margin: 70px;
+  overflow-y: scroll;
+  max-height: 300px;
 }
 
 .chat-addition {
