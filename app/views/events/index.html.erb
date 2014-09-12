@@ -7,17 +7,19 @@
   
         <% @events.each do |event| %>
           <div class="event-individual">
-            <div>
+            <div class="event-carousel">
                 Image or carousel of images.
             </div>
-            <div>
+            <div class="event-summary">
                 <h3><%= event.name %></h3>
                 <%= event.event_date %><br />
                 <%= event.event_time %><br />
                 <%= event.venue %><br />
                 <!-- consider putting in scope in here -->
                 Consider putting in returning
-                <%= event.attending %> |<%= link_to 'Show', event %>|<%= link_to 'Edit', edit_event_path(event) %>|<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= event.attending %>
+                <br>
+                <%= link_to 'Show', event %>|<%= link_to 'Edit', edit_event_path(event) %>|<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
           </div>
         <% end %>
