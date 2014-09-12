@@ -87,6 +87,7 @@ p {
   float: right;
 /*  width: 360px;*/
   margin-right: 40px;
+  height: 300px
 }
 
 .item {
@@ -121,6 +122,14 @@ p {
   float: right;
   color: black;
   font-size: 20px;
+}
+
+.upcoming-event {
+  width: 250px;
+  height: 300px;
+  float: left;
+  background-color: gray;
+  margin: 30px;
 }
 
 #rss {
