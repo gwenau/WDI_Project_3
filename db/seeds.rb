@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 Group.all.each {|x| x.destroy}
 Event.all.each {|x| x.destroy}
 User.all.each {|x| x.destroy}

@@ -1,15 +1,20 @@
 <div class="index-div">
-  
 
   <h1>Chat output</h1>
-  <ul>
-  <% @chats.each do |chat| %>
-      <li>user<%= chat.username %>:<%= chat.chat_message %></li>
-      <!-- <td><%= link_to 'Show', chat %></td>
-      <td><%= link_to 'Edit', edit_chat_path(chat) %></td>
-      <td><%= link_to 'Destroy', chat, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-    </ul>
-  <% end %>
-  <%= render 'form' %>
-  <br />
+  <div class="chat-selection">
+    <ul>
+    <% @chats.each do |chat| %>
+        <li class="chat-addition">user<%= chat.username %>:<%= chat.chat_message %></li>
+      </ul>
+    <% end %>
+  </div>
+  <div id="chat-input">
+    <%= render 'form' %>
+    <br />
+  </div>
+
 </div>
+<br />
+<br />
+<br />
+<br />

@@ -147,10 +147,6 @@ p {
   float: left;
 }
 
-.event-summary {
-
-}
-
 /* Event show page */
 .events-map-container {
   width: 1010px;
@@ -248,4 +244,18 @@ p {
 
 .style_image {
   border-radius: 20px;
+}
+
+/* Chat index page */
+.chat-selection {
+  border: 1.5px solid #cfcfcf;
+  margin: 70px;
+}
+
+.chat-addition {
+  list-style-type: none;
+}
+
+#chat-input {
+    margin: 70px;
 }
