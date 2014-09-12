@@ -27,16 +27,16 @@ function request(method, url, data){
   })
 }
 
-function appendNewTask(task){
-  $('<li>'+
-      '<input type="text" data-chat-id="'+task.id+'">'+
-    '<label>'+task.title+'</label></li>').prependTo("#todo-list")
+function appendNewTask(chat){
+  $('<li>'+chat.chat_message+'</li>').appendTo("#todo-list")
 }
 
 function createChat(){
+  // debugger;
+  console.log($("#new-todo-chat").val())
   request("POST", "/chats", {
-    task: {
-      title: $("#new-todo-chat").val()
+    chat: {
+      chat_message: $("#new-todo-chat").val()
     }
   }).success(function(data){
     // Semicolons required here because it's calling on two different functions within this method.
@@ -56,11 +56,11 @@ function getChats(){
 
 
 $(function(){
-  console.log($("#new-todo-chat"))
   getChats()
 
   $("#new-todo-chat").on("keypress", function(event){
     if(event.which == '13')
       createChat()
+    // console.log('hi')
   })
 })

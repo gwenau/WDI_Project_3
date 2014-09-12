@@ -42,7 +42,9 @@ class ChatsController < ApplicationController
   # POST /chats
   # POST /chats.json
   def create
+    # binding.pry
     @chat = Chat.new(params[:chat])
+
 
     respond_to do |format|
       if @chat.save

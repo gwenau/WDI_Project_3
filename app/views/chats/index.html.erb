@@ -1,27 +1,12 @@
 <div class="index-div">
+  <h1>GA Todo</h1>
 
-  <h1>Chat output</h1>
   <div class="chat-selection">
-    <ul>
-    <% @chats.each do |chat| %>
-        <li class="chat-addition">user<%= chat.username %>:<%= chat.chat_message %></li>
-      </ul>
-    <% end %>
+    <ul id="todo-list"></ul>
   </div>
   <div id="chat-input">
-    <%= render 'form' %>
-    <br />
+    <input id="new-todo-chat" placeholder="What needs to be done?" type="text">
   </div>
-
-<header id="header">
-  <h1>GA Todo</h1>
-  <input id="new-todo-chat" placeholder="What needs to be done?" type="text">
-</header>
-
-
-<ul id="todo-list"></ul>
-
-
 </div>
 <br />
 <br />
