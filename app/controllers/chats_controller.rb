@@ -15,6 +15,7 @@ class ChatsController < ApplicationController
   # GET /chats/1
   # GET /chats/1.json
   def show
+
     @chat = Chat.find(params[:id])
 
     respond_to do |format|

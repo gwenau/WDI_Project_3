@@ -9,12 +9,12 @@ function request(method, url, data){
 }
 
 function appendNewTask(chat){
-  $('<li>'+chat.chat_message+'</li>').appendTo("#todo-list")
+  $('<li>'+chat.chat_message+
+    '<button class="destroy" data-chat-id="'+chat.id+'">Delete</button></li>').appendTo("#todo-list")
 }
 
 function createChat(){
   // debugger;
-  console.log($("#new-todo-chat").val())
   request("POST", "/chats", {
     chat: {
       chat_message: $("#new-todo-chat").val()
@@ -23,6 +23,15 @@ function createChat(){
     // Semicolons required here because it's calling on two different functions within this method.
     $("#new-todo-chat").val("");
     appendNewTask(data);
+  })
+}
+
+function destroyTask(){
+  $this = $(this) // since this is jquery whereas native javascript is _this = this.
+  taskId = $this.data("chat-id")
+  request("DELETE", "/chats/"+taskId, null).success(function(){
+    // $this has been binded to the destroyTask function.
+    $this.parent().remove()
   })
 }
 
@@ -38,6 +47,8 @@ function getChats(){
 
 $(function(){
   getChats()
+
+  $("#todo-list").on("click", ".destroy", destroyTask)
 
   $("#new-todo-chat").on("keypress", function(event){
     if(event.which == '13')
