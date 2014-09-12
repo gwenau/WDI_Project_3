@@ -3,7 +3,7 @@ class ChatsController < ApplicationController
   # GET /chats.json
 
    def create
-    # binding.pry
+    binding.pry
     @chat = Chat.new(params[:chat])
 
 
