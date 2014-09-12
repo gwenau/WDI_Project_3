@@ -14,7 +14,7 @@
 <body>
   <div id="login-logoff-and-dropdown">
     <div id="user-status">
-    <p class="notice alert" id="notice"><%= notice %><% alert %></p>
+<!--     <p class="notice alert" id="notice"><%#= notice %><%# alert %></p> -->
       <% if user_signed_in? %>
         <%= current_user.email %> |
         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -37,9 +37,9 @@
         <li><a href="/events">Events</a></li>
         <li><a href="/groups">Groups</a></li>
         <li><a href="/users">Users</a></li>
-        <li class="divider"></li>
-        <li><a href="/chats">Chat</a></li>
         <% if user_signed_in? %>
+          <li class="divider"></li>
+          <li><a href="/chats">Chat</a></li>
           <li class="divider"></li>
           <li><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></li>
         <% end %>
