@@ -1,10 +1,27 @@
 class ChatsController < ApplicationController
   # GET /chats
   # GET /chats.json
+
+   def create
+    # binding.pry
+    @chat = Chat.new(params[:chat])
+
+
+    respond_to do |format|
+      if @chat.save
+        format.html { redirect_to @chat, notice: 'Chat was successfully created.' }
+        format.json { render json: @chat, status: :created, location: @chat }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @chat.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def index
     @chats = Chat.all
     @chat = Chat.new
-    #redirect_to(chats_path) # At the moment, this will be causing a loop so it's not worth it at the moment.
+    # binding.pry
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,21 +59,7 @@ class ChatsController < ApplicationController
 
   # POST /chats
   # POST /chats.json
-  def create
-    # binding.pry
-    @chat = Chat.new(params[:chat])
-
-
-    respond_to do |format|
-      if @chat.save
-        format.html { redirect_to @chat, notice: 'Chat was successfully created.' }
-        format.json { render json: @chat, status: :created, location: @chat }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @chat.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+ 
 
   # PUT /chats/1
   # PUT /chats/1.json

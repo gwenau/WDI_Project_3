@@ -54,26 +54,26 @@
       });
 
 
-      // Add Chat
-      $scope.chatlines = [{username: "Mike", line: "Hello World"}];
-      // $scope.other = [];
+      // // Add Chat
+      // $scope.chatlines = [{username: "Mike", line: "Hello World"}];
+      // // $scope.other = [];
 
-      $http.get('/chat.json').success(function(data) {
-        $scope.chatlines = data;
-      })
+      // $http.get('/chat.json').success(function(data) {
+      //   $scope.chatlines = data;
+      // })
 
 
-      $scope.addlines = function (chat) {
-        console.log("addLinesFunctionFired.")
-        console.log($scope.chat)
-        $scope.chatlines.push($scope.chat)
+      // $scope.addlines = function (chat) {
+      //   console.log("addLinesFunctionFired.")
+      //   console.log($scope.chat)
+      //   $scope.chatlines.push($scope.chat)
         
         
-        $http.post('/chat.json', { chatline: $scope.chat}).success(function(data) {
-            $scope.chatlines.push(data)
-            $scope.chat = false        
-          })
-      }
+      //   $http.post('/chat.json', { chatline: $scope.chat}).success(function(data) {
+      //       $scope.chatlines.push(data)
+      //       $scope.chat = false        
+      //     })
+      // }
 
 
   }])

@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   belongs_to :group
   has_many :messages
   has_and_belongs_to_many :events, :join_table => "events_users"
-
+  belongs_to :chat
 
   def self.find_for_google_oauth2(auth, signed_in_user=nil)
     if user = signed_in_user || User.find_by_email(auth.info.email)
