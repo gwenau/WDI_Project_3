@@ -136,7 +136,9 @@ p {
 
 /* Events index page */
 .event-individual {
-  border: 2px dotted #428bca;
+  border: 1.5px solid #cfcfcf;
+  box-shadow: 10px 10px 5px #888888;
+  margin: 70px;
 }
 
 /* Event show page */
@@ -181,6 +183,8 @@ p {
 .index-div {
   width: 1010px;
   margin: auto;
+  background-color: white;
+  border: 2px dotted #428bca;
 }
 
 #event-goers {
