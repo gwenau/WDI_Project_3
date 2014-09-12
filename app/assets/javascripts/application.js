@@ -16,29 +16,51 @@
 //= require angular-animate
 //= require_tree .
 
+// request("GET", "/tasks", null).success()
 
-// $(document).ready(function(){    
+function request(method, url, data){
+  return $.ajax({
+    method: method,
+    url: url,
+    dataType: "json",
+    data: data
+  })
+}
 
-//         $('form').on('submit', function(ev) {
-//            ev.preventDefault();
-//             console.log("here")
-//             console.log()
-//             var ajaxOptions = {
-//               url: '/chat.json',
-//               type: 'POST',
-//               data: {'username': $('#username').val(), 'message': $('#message').val(), 'since': $('#since').val()}
-//                };
+function appendNewTask(task){
+  $('<li>'+
+      '<input type="text" data-chat-id="'+task.id+'">'+
+    '<label>'+task.title+'</label></li>').prependTo("#todo-list")
+}
 
-//             $.ajax(ajaxOptions).success(function(data) {
-//               console.log(data)
-//             })
-//             });
-      
-//         // Chat app
-//       function addLines(data) {
-//         $.each(data, function(i, chatline) {
-//           $('ul').append('<li><span class="username">&lt;' + chatline.username + "&gt;</span> <span class='message'>" + chatline.message + "</span>");
-//         });
-//       }
-    
-// })
+function createChat(){
+  request("POST", "/chats", {
+    task: {
+      title: $("#new-todo-chat").val()
+    }
+  }).success(function(data){
+    // Semicolons required here because it's calling on two different functions within this method.
+    $("#new-todo-chat").val("");
+    appendNewTask(data);
+  })
+}
+
+
+function getChats(){
+  request("GET", "/chats", null).success(function(data){
+    $.each(data, function(i, task){
+        appendNewTask(task)
+    })
+  })
+}
+
+
+$(function(){
+  console.log($("#new-todo-chat"))
+  getChats()
+
+  $("#new-todo-chat").on("keypress", function(event){
+    if(event.which == '13')
+      createChat()
+  })
+})
