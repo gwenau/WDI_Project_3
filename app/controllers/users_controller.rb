@@ -18,7 +18,12 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    
+    @upcoming_event_sample_1 = Event.all.sample.name
 
+    @upcoming_event_sample_2 = Event.all.sample.name
+
+    # binding.pry
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
