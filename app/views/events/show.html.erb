@@ -1,102 +1,109 @@
-<div class="events-map-container">
-  <div id="event-map-left">
-    <p>
-      <b>Name:</b>
-      <%= @event.name %>
-    </p>
+<div class="index-div">
+  <div class="events-map-container">
+    <div id="event-map-left">
+      <p>
+        <b>Name:</b>
+        <%= @event.name %>
+      </p>
 
-    <p>
-      <b>Description:</b>
-      <%= @event.description %>
-    </p>
+      <p>
+        <b>Description:</b>
+        <%= @event.description %>
+      </p>
 
-    <p>
-      <b>Event date:</b>
-      <%= @event.event_date %>
-    </p>
+      <p>
+        <b>Event date:</b>
+        <%= @event.event_date %>
+      </p>
 
-    <p>
-      <b>Event time:</b>
-      <%= @event.event_time %>
-    </p>
+      <p>
+        <b>Event time:</b>
+        <%= @event.event_time %>
+      </p>
 
-    <p>
-      <b>Scope:</b>
-      <%= @event.scope %>
-    </p>
+      <p>
+        <b>Scope:</b>
+        <%= @event.scope %>
+      </p>
 
-    <p>
-      <b>Attendence required:</b>
-      <%= @event.attendence_required %>
-    </p>
+      <p>
+        <b>Attendence required:</b>
+        <%= @event.attendence_required %>
+      </p>
 
-    <p>
-      <b>Attending:</b>
-      <%= @event.attending %>
-    </p>
+      <p>
+        <b>Attending:</b>
+        <%= @event.attending %>
+      </p>
 
-    <p>
-      <b>Venue:</b>
-      <%= @event.venue %>
-    </p>
+      <p>
+        <b>Venue:</b>
+        <%= @event.venue %>
+      </p>
 
-    <p>
-      <b>Address line 1:</b>
-      <%= @event.address_line_1 %>
-    </p>
+      <p>
+        <b>Address line 1:</b>
+        <%= @event.address_line_1 %>
+      </p>
 
-    <p>
-      <b>Address line 2:</b>
-      <%= @event.address_line_2 %>
-    </p>
+      <p>
+        <b>Address line 2:</b>
+        <%= @event.address_line_2 %>
+      </p>
 
-    <p>
-      <b>City:</b>
-      <%= @event.city %>
-    </p>
+      <p>
+        <b>City:</b>
+        <%= @event.city %>
+      </p>
 
-    <p>
-      <b>Postcode:</b>
-      <%= @event.postcode %>
-    </p>
+      <p>
+        <b>Postcode:</b>
+        <%= @event.postcode %>
+      </p>
 
-    <p>
-      <b>Phone:</b>
-      <%= @event.phone %>
-    </p>
-    <%= link_to 'Edit', edit_event_path(@event) %> |
-    <%= link_to 'Back', events_path %>
-  </div>
-  <div id="event-map-right">
-    <map style="display:block;height:300px" />
-  </div>
-</div>
-
-<div id="event-update-div">
-  <div>
-    <div id="events-weather-api">
-      Temperature in London: {{ weatherData }} degrees celsius
+      <p>
+        <b>Phone:</b>
+        <%= @event.phone %>
+      </p>
+      <%= link_to 'Edit', edit_event_path(@event) %> |
+      <%= link_to 'Back', events_path %>
     </div>
-    <div id="event-text-messaging-area">
-      <h2>Send a text message !</h2>
-      <%= form_tag("/messages", method: "post") do %>
-        <%= hidden_field :event_id, :value => @event.id %>
-        <%#= hidden_field :user_id, :value =>@user.id %>
-        <%= label_tag(:content, "Message:") %>
-        <%= text_field_tag(:content )%>
-        <%= submit_tag("Send Message") %>
+    <div id="event-map-right">
+      <map style="display:block;height:300px" />
+    </div>
+  </div>
+
+  <div id="event-update-div">
+    <div>
+      <div id="events-weather-api">
+        Temperature in London: {{ weatherData }} degrees celsius
+      </div>
+      <div id="event-text-messaging-area">
+        <h2>Send a text message !</h2>
+        <%= form_tag("/messages", method: "post") do %>
+          <%= hidden_field :event_id, :value => @event.id %>
+          <%#= hidden_field :user_id, :value =>@user.id %>
+          <%= label_tag(:content, "Message:") %>
+          <%= text_field_tag(:content )%>
+          <%= submit_tag("Send Message") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="index-div">
+    <div id="event-goers">
+      <% @event.users.each do |user|%>
+        <div class="event-goer">
+        <%= image_tag(user.image, size: "100x100") %>
+        <%= link_to user.name, user_path(user) %>
+        </div>
       <% end %>
     </div>
   </div>
-</div>
-
-<div class="index-div">
-  <div id="event-goers">
-    <% @event.users.each do |user|%>
-      <div class="event-goer">
-      <%= image_tag(user.image, size: "100x100") %>
-      <%= link_to user.name, user_path(user) %>
-      </div>
-    <% end %>
+  <div class="empty-div">
   </div>
 </div>
+<br />
+<br />
+<br />
