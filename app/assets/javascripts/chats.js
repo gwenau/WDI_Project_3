@@ -10,7 +10,7 @@ function request(method, url, data){
 
 function appendNewTask(chat){
   $('<li>'+chat.username+": "+chat.chat_message+
-    '<button class="destroy" data-chat-id="'+chat.id+'">X</button></li>').appendTo("#todo-list")
+    '<span class="destroy" data-chat-id="'+chat.id+'"> X</span></li>').appendTo("#todo-list")
 }
 
 function createChat(){

@@ -1,3 +1,15 @@
 // Place all the styles related to the Chats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul {
+  list-style: none;
+}
+
+span {
+  color: white;
+}
+
+span:hover {
+  color: #428bca;
+}
