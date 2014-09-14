@@ -10,7 +10,7 @@ body {
 header {
 /*  margin-top: 60px;*/
   text-align: center;
-  font-size: 120px;
+  font-size: 150px;
   font-weight: bold;
   color: white;
   text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
@@ -19,8 +19,8 @@ header {
 .dotted {
   margin-top: 40px;
   margin-bottom: 20px;
-  padding-top: 10px;
-  padding-bottom: 8px;
+  padding-top: 14px;
+  padding-bottom: 15px;
 /*  padding: 2.25em 1.6875em;*/
   background-image: -webkit-repeating-radial-gradient(center center, rgba(66, 139, 202, 1), rgba(66, 139, 202, 1) 1px, transparent 1px, transparent 100%);
   background-image: -moz-repeating-radial-gradient(center center, rgba(66, 139, 202, 1), rgba(66, 139, 202, 1) 1px, transparent 1px, transparent 100%);
@@ -29,8 +29,8 @@ header {
   -webkit-background-size: 6px 6px;
   -moz-background-size: 6px 6px;
   background-size: 6px 6px;
-  border-top: 7px solid #dcdcdc;
-  border-bottom: 7px solid #dcdcdc;
+  border-top: 12px solid #dcdcdc;
+  border-bottom: 12px solid #dcdcdc;
   width: 1010px;
   margin: auto;
   margin-top: 40px;
