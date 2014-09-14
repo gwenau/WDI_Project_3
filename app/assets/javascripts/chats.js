@@ -9,7 +9,8 @@ function request(method, url, data){
 }
 
 function appendNewTask(chat){
-  $('<li>'+chat.user_id+": "+chat.chat_message+
+  console.log("id hopefully", chat.user_id)
+  $('<li>'+chat.username+": "+chat.chat_message+
     '<button class="destroy" data-chat-id="'+chat.id+'">Delete</button></li>').appendTo("#todo-list")
 }
 
@@ -19,7 +20,8 @@ function createChat(){
   request("POST", "/chats", {
     chat: {
       chat_message: $("#new-todo-chat").val(),
-      user_id: parseInt($("#chat_user_id").val())
+      user_id: parseInt($("#chat_user_id").val()),
+      username: $("#username").val()
     }
   }).success(function(data){
     // Semicolons required here because it's calling on two different functions within this method.

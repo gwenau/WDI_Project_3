@@ -3,9 +3,8 @@ class ChatsController < ApplicationController
   # GET /chats.json
 
    def create
-    binding.pry
     @chat = Chat.new(params[:chat])
-
+    #binding.pry
 
     respond_to do |format|
       if @chat.save
