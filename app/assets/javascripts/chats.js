@@ -15,11 +15,12 @@ function appendNewTask(chat){
 
 function createChat(){
   // debugger;
-  // $("#chat_user_id").val()
+  console.log(c_timestamp)
   request("POST", "/chats", {
     chat: {
       chat_message: $("#new-todo-chat").val(),
-      username: $("#username").val()
+      username: $("#username").val(),
+      c_timestamp: $("c_timestamp").val()
     }
   }).success(function(data){
     // Semicolons required here because it's calling on two different functions within this method.
