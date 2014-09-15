@@ -20,7 +20,7 @@ function createChat(){
     chat: {
       chat_message: $("#new-todo-chat").val(),
       username: $("#username").val(),
-      c_timestamp: $("c_timestamp").val()
+      c_timestamp: $("#c_timestamp").val()
     }
   }).success(function(data){
     // Semicolons required here because it's calling on two different functions within this method.
