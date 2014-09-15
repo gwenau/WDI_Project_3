@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140912133822) do
+ActiveRecord::Schema.define(:version => 20140915233421) do
+
+  create_table "authentications", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "chats", :force => true do |t|
     t.string   "username"
@@ -19,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20140912133822) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "user_id"
+    t.datetime "c_timestamp"
   end
 
   create_table "events", :force => true do |t|

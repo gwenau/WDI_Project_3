@@ -18,6 +18,7 @@ gem 'less-rails-bootstrap'
 gem "fog"
 gem 'cancan'
 gem 'kaminari'
+gem "omniauth-github"
 
 group :development do
   gem 'pry'

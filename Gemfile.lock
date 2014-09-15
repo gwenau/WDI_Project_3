@@ -138,6 +138,9 @@ GEM
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
+    omniauth-github (1.1.2)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
     omniauth-google-oauth2 (0.2.5)
       omniauth (> 1.0)
       omniauth-oauth2 (~> 1.1)
@@ -228,6 +231,7 @@ DEPENDENCIES
   kaminari
   less-rails-bootstrap
   mandrill-api
+  omniauth-github
   omniauth-google-oauth2
   pg
   pry
