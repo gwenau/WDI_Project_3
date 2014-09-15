@@ -5,6 +5,7 @@ class ChatsController < ApplicationController
    def create
     @chat = Chat.new(params[:chat])
     #binding.pry
+    
 
     respond_to do |format|
       if @chat.save
