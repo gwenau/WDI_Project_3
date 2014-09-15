@@ -15,7 +15,7 @@ function appendNewTask(chat){
 
 function createChat(){
   // debugger;
-  console.log(c_timestamp)
+  
   request("POST", "/chats", {
     chat: {
       chat_message: $("#new-todo-chat").val(),
@@ -26,7 +26,16 @@ function createChat(){
     // Semicolons required here because it's calling on two different functions within this method.
     $("#new-todo-chat").val("");
     appendNewTask(data);
+  }).success(function(data){
+    updateTimestamp();
   })
+}
+
+function updateTimestamp(data) {
+    debugger
+    console.log(updateTimestamp)
+    console.log($('#c_timestamp').val(data))
+    //$('#c_timestamp').val(data[data.length-1].timestamp);
 }
 
 function destroyTask(){
@@ -49,6 +58,7 @@ function getChats(){
 
 
 $(function(){
+  //ev.preventDefault();
   getChats()
 
   $("#todo-list").on("click", ".destroy", destroyTask)

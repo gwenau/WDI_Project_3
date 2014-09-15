@@ -4,7 +4,7 @@ class ChatsController < ApplicationController
 
    def create
     @chat = Chat.new(params[:chat])
-    binding.pry
+    #binding.pry
     
 
     respond_to do |format|
