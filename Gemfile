@@ -19,6 +19,7 @@ gem "fog"
 gem 'cancan'
 gem 'kaminari'
 gem "omniauth-github"
+gem 'omniauth-facebook'
 
 group :development do
   gem 'pry'
