@@ -16,7 +16,7 @@
       $scope.addSlide = function() {
         var newWidth = 601 + $scope.slides.length;
         $scope.slides.push({
-          image: 'http://placekitten.com/' + newWidth + '/300',
+          image: 'https://s3-eu-west-1.amazonaws.com/wdi7-project3-gwen-au/' + newWidth + '.JPG',
           text: ['More','Extra','Lots of','Surplus'][$scope.slides.length % 4] + ' ' +
             ['Cats', 'Kittys', 'Felines', 'Cutes'][$scope.slides.length % 4]
         });
