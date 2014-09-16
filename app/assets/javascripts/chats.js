@@ -46,15 +46,20 @@ function getChats(){
   })
 }
 
+function updateChatBox(){
+  setInterval(function(){ getChats() }, 10000);
+}
 
 $(function(){
-  getChats()
+  getChats();
+
+  updateChatBox();
 
   $("#todo-list").on("click", ".destroy", destroyTask)
 
   $("#new-todo-chat").on("keypress", function(event){
     if(event.which == '13')
-      createChat()
+      createChat();
     // console.log('hi')
   })
 })
