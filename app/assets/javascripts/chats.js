@@ -55,7 +55,7 @@ function getChats(){
 }
 
 function updateChatBox(){
-  setInterval(function(){ getChats() }, 10000);
+  setInterval(function(){ getChats() }, 1000);
 }
 
 $(function(){
