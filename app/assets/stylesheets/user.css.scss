@@ -121,7 +121,14 @@ p {
 
 .item {
   border: 15px groove #428bca;
+  width: 630px;
+  height: 340px;
 }
+
+/*.item img {
+  width: 630px;
+  height: 300px;
+}*/
 
 /* Main page 2nd div */
 #user-upcoming-events {
@@ -181,8 +188,8 @@ p {
 }
 
 .event-carousel {
-  width: 250px;
-  height: 200px;
+/*  width: 250px;
+  height: 200px;*/
   float: left;
 }
 
