@@ -1,7 +1,7 @@
 AlumniApp::Application.routes.draw do
   resources :chats
 
-  root to: "users#index"
+  root to: "events#index"
 
   resources :messages, only: [:new, :create]
 
