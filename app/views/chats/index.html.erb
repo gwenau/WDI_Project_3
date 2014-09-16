@@ -8,7 +8,6 @@
     <input id="new-todo-chat" placeholder="Add chat line here..." type="text">
     <input type="hidden" id="username" value="<%= current_user.name %>">
     <input type="hidden" id="c_timestamp" value="<%= Chat.last.created_at %>" />
-    <%= Chat.all.last.created_at %>
   </div>
 </div>
 <br />
