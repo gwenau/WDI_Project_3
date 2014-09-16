@@ -17,8 +17,8 @@
         var newWidth = 601 + $scope.slides.length;
         $scope.slides.push({
           image: 'https://s3-eu-west-1.amazonaws.com/wdi7-project3-gwen-au/' + newWidth + '.JPG',
-          text: ['More','Extra','Lots of','Surplus'][$scope.slides.length % 4] + ' ' +
-            ['Cats', 'Kittys', 'Felines', 'Cutes'][$scope.slides.length % 4]
+          text: ['Farewell','The','Girls of','Gunmakers'][$scope.slides.length % 4] + ' ' +
+            ['Matt', 'Gang', 'WDI7', 'Friday'][$scope.slides.length % 4]
         });
       };
       for (var i=0; i<4; i++) {
