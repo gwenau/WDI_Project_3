@@ -42,7 +42,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     TextMessage.new(params[:content], "00447475288100").send
-    # redirect_to event_path(@event.id) - I need help on the redirection.
+    redirect_to(events_path)
 
 
     # @message = Message.new(params[:message])
