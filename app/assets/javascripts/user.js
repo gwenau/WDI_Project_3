@@ -1,6 +1,6 @@
 (function() {
 
-  var app = angular.module('lumneeApp', ['ui.bootstrap', 'ngMap']);
+  var app = angular.module('lumneeApp', ['ui.bootstrap']);
  
 // $http to call on the api's.
   app.controller('lumneeController' , ["$scope", "$http", function($scope, $http) {
@@ -17,8 +17,8 @@
         var newWidth = 601 + $scope.slides.length;
         $scope.slides.push({
           image: 'https://s3-eu-west-1.amazonaws.com/wdi7-project3-gwen-au/' + newWidth + '.JPG',
-          text: ['Farewell','The','Girls of','Gunmakers'][$scope.slides.length % 4] + ' ' +
-            ['Matt', 'Gang', 'WDI7', 'Friday'][$scope.slides.length % 4]
+          text: ['Gunmakers','The','Girls of','Farewell'][$scope.slides.length % 4] + ' ' +
+            ['Friday', 'Gang', 'WDI7', 'Matt'][$scope.slides.length % 4]
         });
       };
       for (var i=0; i<4; i++) {
