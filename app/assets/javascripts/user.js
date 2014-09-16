@@ -47,8 +47,13 @@
       // Events
       $scope.events = gon.events
       console.log($scope.events)
+    
+      //console.log($scope.ev)
 
       // Google maps
+      $scope.positions =[ [51.544543, -0.0643581], [51.525026, -0.090486], [51.522563, -0.110554] ]
+
+
       $scope.map
       $scope.markers = {}
       $scope.shapes = {}
