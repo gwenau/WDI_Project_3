@@ -9,8 +9,10 @@ function request(method, url, data){
 }
 
 function appendNewTask(chat){
+  var someDate = new Date(chat.created_at);
+    someDate = someDate.getTime();
   $('<li><strong>'+chat.username+"</strong>: "+chat.chat_message+
-    '<span class="destroy" data-chat-id="'+chat.id+'"> X</span></li>').appendTo("#todo-list")
+    '<span class="destroy" data-chat-id="'+chat.id + '" data-time="' + someDate + '"> X</span></li>').appendTo("#todo-list")
 }
 
 function createChat(){
@@ -19,24 +21,17 @@ function createChat(){
   request("POST", "/chats", {
     chat: {
       chat_message: $("#new-todo-chat").val(),
-      username: $("#username").val(),
-      c_timestamp: $("#c_timestamp").val()
+      username: $("#username").val()
+      // created_at: $("#c_timestamp").val()
     }
   }).success(function(data){
     // Semicolons required here because it's calling on two different functions within this method.
     $("#new-todo-chat").val("");
     appendNewTask(data);
-  }).success(function(data){
-    updateTimestamp();
   })
 }
 
-function updateTimestamp(data) {
-    debugger
-    console.log(updateTimestamp)
-    console.log($('#c_timestamp').val(data))
-    //$('#c_timestamp').val(data[data.length-1].timestamp);
-}
+
 
 function destroyTask(){
   $this = $(this) // since this is jquery whereas native javascript is _this = this.
@@ -49,9 +44,12 @@ function destroyTask(){
 
 
 function getChats(){
-  request("GET", "/chats", null).success(function(data){
+  console.log('Gets chats')
+
+  request("GET", "/chats", { created_at: $('li').last().find('span').data('time')}).success(function(data){
     $.each(data, function(i, task){
         appendNewTask(task)
+
     })
   })
 }
@@ -61,6 +59,7 @@ function updateChatBox(){
 }
 
 $(function(){
+
 
   getChats();
 

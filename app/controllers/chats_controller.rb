@@ -3,9 +3,7 @@ class ChatsController < ApplicationController
   # GET /chats.json
 
    def create
-    @chat = Chat.new(params[:chat])
-    #binding.pry
-    
+    @chat = Chat.new(params[:chat])  
 
     respond_to do |format|
       if @chat.save
@@ -19,9 +17,16 @@ class ChatsController < ApplicationController
   end
 
   def index
-    @chats = Chat.all
-    @chat = Chat.new
     # binding.pry
+    #@chats = Chat.find(:all, :conditions => ["created_at > ?", "2014-09-16 10:20:40"])
+    # binding.pry
+    if params['created_at']
+      @chats = Chat.find(:all, :conditions => ['chats.created_at > ?' , Time.at(params['created_at'].to_i / 1000 + 1 )])
+    else 
+      @chats = Chat.all
+    end
+# binding.pry
+    
 
     respond_to do |format|
       format.html # index.html.erb
