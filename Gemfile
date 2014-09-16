@@ -20,6 +20,7 @@ gem 'cancan'
 gem 'kaminari'
 gem "omniauth-github"
 gem 'aws-sdk'
+gem 'gon'
 
 group :development do
   gem 'pry'

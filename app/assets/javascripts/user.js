@@ -1,6 +1,6 @@
 (function() {
 
-  var app = angular.module('lumneeApp', ['ui.bootstrap', 'ngMap']);
+  var app = angular.module('lumneeApp', ['ui.bootstrap']);
  
 // $http to call on the api's.
   app.controller('lumneeController' , ["$scope", "$http", function($scope, $http) {
@@ -21,9 +21,9 @@
       //       ['Friday', 'Gang', 'WDI7', 'Matt'][$scope.slides.length % 4]
       //   });
       // };
-      for (var i=0; i<4; i++) {
-        $scope.addSlide();
-      }
+      // for (var i=0; i<4; i++) {
+      //   $scope.addSlide();
+      // }
 
       // Drop down menu
       $scope.items = [
@@ -42,6 +42,11 @@
         $event.stopPropagation();
         $scope.status.isopen = !$scope.status.isopen;
       };
+
+
+      // Events
+      $scope.events = gon.events
+      console.log($scope.events)
 
       // Google maps
       $scope.map

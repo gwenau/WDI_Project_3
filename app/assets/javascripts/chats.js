@@ -44,7 +44,7 @@ function destroyTask(){
 
 
 function getChats(){
-  console.log('Gets chats')
+  // console.log('Gets chats')
 
   request("GET", "/chats", { created_at: $('li').last().find('span').data('time')}).success(function(data){
     $.each(data, function(i, task){
