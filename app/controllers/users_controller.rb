@@ -19,9 +19,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     gon.selectedUser = @user 
-    @upcoming_event_sample_1 = Event.all.sample.name
+    @upcoming_event_sample_1 = Event.all.sample
 
-    @upcoming_event_sample_2 = Event.all.sample.name
+    @upcoming_event_sample_2 = Event.all.sample
 
     # binding.pry
     respond_to do |format|
