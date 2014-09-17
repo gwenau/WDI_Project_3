@@ -67,8 +67,6 @@
       </p>
       <%= link_to 'Edit', edit_event_path(@event) %> |
       <%= link_to 'Back', events_path %>
-      <%= @event.lat_long %><br />
-      {{ selectedEvent.lat_long }}
     </div>
     <div id="event-map-right">
       <map style="display:block;height:300px" center="{{ selectedEvent.lat_long }}"><marker position="{{ selectedEvent.lat_long }}" title="{{ selectedEvent.name }}" animation="Animation.BOUNCE" class="ng-scope"></marker></map>
