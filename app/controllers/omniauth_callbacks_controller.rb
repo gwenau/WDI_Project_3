@@ -11,6 +11,10 @@
       handle_callback "facebook"
     end
 
+    def linkedin
+      handle_callback "linkedin"
+    end
+
     def handle_callback(kind)
       # You need to implement the method below in your model (e.g. app/models/user.rb)
       @user = User.find_for_oauth(kind, request.env["omniauth.auth"], current_user)

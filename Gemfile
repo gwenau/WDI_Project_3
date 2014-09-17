@@ -22,6 +22,7 @@ gem "omniauth-github"
 gem 'aws-sdk'
 gem 'gon'
 gem 'omniauth-facebook'
+gem 'omniauth-linkedin-oauth2'
 
 group :development do
   gem 'pry'

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,  :omniauthable, :omniauth_providers => [:google_oauth2, :github, :facebook]#, :confirmable, :timeoutable,  :confirm_within => 10.minute
+         :recoverable, :rememberable, :trackable, :validatable,  :omniauthable, :omniauth_providers => [:google_oauth2, :github, :facebook, :linkedin]#, :confirmable, :timeoutable,  :confirm_within => 10.minute
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :group_id, :name, :image, :dob, :mobile, :role, :cancan_role, :github, :linkedin, :facebook, :twitter, :address_line_1, :address_line_2, :city, :postcode, :provider, :uid, :personal_website, :display
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   def self.find_for_oauth(kind, auth, signed_in_user=nil)
 
     case kind
-    when "google", "github", "facebook"
+    when "google", "github", "facebook", "linkedin"
       if user = signed_in_user || User.find_by_email(auth.info.email)
         user.name = auth.info.name if user.name.blank?
         user.save
@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      if auth = session["devise.google_data"] || session["devise.github_data"] || session["devise.facebook_data"]
+      if auth = session["devise.google_data"] || session["devise.github_data"] || session["devise.facebook_data"] || session["devise.linkedin_data"]
         user.name = auth.info.name if user.name.blank?
         user.email = auth.info.email if user.email.blank?
       end
