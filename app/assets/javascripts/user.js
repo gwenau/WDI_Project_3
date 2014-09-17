@@ -13,17 +13,17 @@
       // Carousel, currently programmed to displaying kittens.
       $scope.myInterval = 5000;
       $scope.slides = [];
-      // $scope.addSlide = function() {
-      //   var newWidth = 601 + $scope.slides.length;
-      //   $scope.slides.push({
-      //     image: 'https://s3-eu-west-1.amazonaws.com/wdi7-project3-gwen-au/' + newWidth + '.JPG',
-      //     text: ['Gunmakers','The','Girls of','Farewell'][$scope.slides.length % 4] + ' ' +
-      //       ['Friday', 'Gang', 'WDI7', 'Matt'][$scope.slides.length % 4]
-      //   });
-      // };
-      // for (var i=0; i<4; i++) {
-      //   $scope.addSlide();
-      // }
+      $scope.addSlide = function() {
+        var newWidth = 601 + $scope.slides.length;
+        $scope.slides.push({
+          image: 'https://s3-eu-west-1.amazonaws.com/wdi7-project3-gwen-au/' + newWidth + '.JPG',
+          text: ['Gunmakers','The','Girls of','Farewell'][$scope.slides.length % 4] + ' ' +
+            ['Friday', 'Gang', 'WDI7', 'Matt'][$scope.slides.length % 4]
+        });
+      };
+      for (var i=0; i<4; i++) {
+        $scope.addSlide();
+      }
 
       // Drop down menu
       $scope.items = [
@@ -63,12 +63,6 @@
       $scope.$on('mapsInitialized', function(event, maps) {
         maps[0].setCenter()
       });
-
-
-      // // gon
-      // gon.preference = "hello"
-      // console.log(gon.preference)
-
 
   }])
 

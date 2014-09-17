@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    
+    gon.selectedUser = @user 
     @upcoming_event_sample_1 = Event.all.sample.name
 
     @upcoming_event_sample_2 = Event.all.sample.name
