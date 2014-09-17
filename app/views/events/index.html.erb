@@ -1,5 +1,5 @@
 <div class="events-map-container">
-    <map style="display:block;height:300px"><marker ng-repeat="position in positions" position="{{ position }}" title="event here" class="ng-scope"></marker></map>
+    <map style="display:block;height:300px"><marker ng-repeat="event in events" position="{{ event.lat_long }}" title="{{ event.name }}" class="ng-scope"><a href="http://lumnee-app.herokuapp.com/events/{{ event.id }}">{{ event.name }}</a></marker></map>
 </div>
 <div class="index-div">
     <h1>Listing events</h1>
@@ -12,11 +12,11 @@
             </div>
             <div>
                 <h3><%= link_to event.name, event %></h3>
-                <%= event.event_date %><br />
-                <%= event.event_time %><br />
+                <%#= event.event_date %><br />
+                <%#= event.event_time %><br />
                 <%= event.venue %><br />
                 <!-- consider putting in scope in here -->
-                Consider putting in returning
+                
                 <%= event.attending %>
                 <br>
                 <%= link_to 'Show', event %>|<%= link_to 'Edit', edit_event_path(event) %>|<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
