@@ -1,6 +1,6 @@
 (function() {
 
-  var app = angular.module('lumneeApp', ['ui.bootstrap']);
+  var app = angular.module('lumneeApp', ['ui.bootstrap', 'ngMap']);
  
 // $http to call on the api's.
   app.controller('lumneeController' , ["$scope", "$http", function($scope, $http) {
