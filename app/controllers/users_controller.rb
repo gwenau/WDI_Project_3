@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    gon.user = @user
   end
 
   # POST /users

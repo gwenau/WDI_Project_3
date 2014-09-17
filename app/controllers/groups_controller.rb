@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
-
+    gon.groups = @groups
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @groups }
@@ -37,6 +37,7 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit
     @group = Group.find(params[:id])
+    gon.group = @group
   end
 
   # POST /groups

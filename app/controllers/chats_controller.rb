@@ -4,7 +4,8 @@ class ChatsController < ApplicationController
 
    def create
     @chat = Chat.new(params[:chat])  
-
+    gon.chats = @chats
+    gon.chat = @chat
     respond_to do |format|
       if @chat.save
         format.html { redirect_to @chat, notice: 'Chat was successfully created.' }
@@ -20,13 +21,14 @@ class ChatsController < ApplicationController
     # binding.pry
     #@chats = Chat.find(:all, :conditions => ["created_at > ?", "2014-09-16 10:20:40"])
     # binding.pry
+
     if params['created_at']
       @chats = Chat.find(:all, :conditions => ['chats.created_at > ?' , Time.at(params['created_at'].to_i / 1000 + 1 )])
     else 
       @chats = Chat.all
     end
 # binding.pry
-    
+    gon.chats = @chats
 
     respond_to do |format|
       format.html # index.html.erb

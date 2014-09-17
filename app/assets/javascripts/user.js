@@ -46,7 +46,6 @@
 
       // Events
       $scope.events = gon.events
-      console.log($scope.events)
     
       $scope.selectedEvent = gon.selectedEvent
       //console.log($scope.ev)
