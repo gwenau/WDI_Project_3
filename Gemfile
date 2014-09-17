@@ -21,6 +21,7 @@ gem 'kaminari'
 gem "omniauth-github"
 gem 'aws-sdk'
 gem 'gon'
+gem 'omniauth-facebook'
 
 group :development do
   gem 'pry'

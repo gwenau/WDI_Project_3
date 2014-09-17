@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140917085222) do
+ActiveRecord::Schema.define(:version => 20140917143509) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20140917085222) do
     t.string   "uid"
     t.string   "personal_website"
     t.string   "display"
+    t.string   "facebook_token"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

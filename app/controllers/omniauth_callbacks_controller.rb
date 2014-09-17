@@ -7,6 +7,10 @@
       handle_callback "github"
     end
 
+    def facebook
+      handle_callback "facebook"
+    end
+
     def handle_callback(kind)
       # You need to implement the method below in your model (e.g. app/models/user.rb)
       @user = User.find_for_oauth(kind, request.env["omniauth.auth"], current_user)
