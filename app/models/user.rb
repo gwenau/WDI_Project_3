@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
   belongs_to :chat
   has_many :authentications
 
+  def role?(role)
+    self.role.to_s == role.to_s
+  end
+
   def self.find_for_oauth(kind, auth, signed_in_user=nil)
 
     case kind
