@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   belongs_to :chat
   has_many :authentications
 
+  # In order to activate the ability model properly.
   def role?(role)
     self.role.to_s == role.to_s
   end

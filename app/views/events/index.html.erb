@@ -20,9 +20,11 @@
                 <%= event.attending %>
                 <br>
                 <% if can? :edit, @event %>
-                    <%= link_to 'Show', event %>
+                 <%= link_to 'Edit', edit_event_path(event) %>
                 <% end %>
-                    |<%= link_to 'Edit', edit_event_path(event) %>|<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% if can? :delete, @event %>
+                   |<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
             </div>
           </div>
         <% end %>
