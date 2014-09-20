@@ -25,8 +25,22 @@ class Ability
       can :delete, Group do |group|
             group.try(:user) == user
             end
+      can :create, Chat 
+      can :update, Chat do |chat| 
+            chat.user == user
+          end
+      can :delete, Chat do |chat|
+            chat.try(:user) == user
+            end
+      can :create, Message 
+      can :update, Message do |message| 
+            message.user == user
+          end
+      can :delete, Message do |message|
+            message.try(:user) == user
+            end
     else
-      can :read, User
+      can :read, :all
     end
   end
 end

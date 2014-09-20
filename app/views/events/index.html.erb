@@ -19,7 +19,10 @@
                 
                 <%= event.attending %>
                 <br>
-                <%= link_to 'Show', event %>|<%= link_to 'Edit', edit_event_path(event) %>|<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% if can? :edit, @event %>
+                    <%= link_to 'Show', event %>
+                <% end %>
+                    |<%= link_to 'Edit', edit_event_path(event) %>|<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
           </div>
         <% end %>
