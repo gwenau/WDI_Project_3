@@ -65,7 +65,9 @@
         <b>Phone:</b>
         <%= @event.phone %>
       </p>
-      <%= link_to 'Edit', edit_event_path(@event) %> |
+      <% if can? :edit, @event %>
+        <%= link_to 'Edit', edit_event_path(@event) %> |
+      <% end %>
       <%= link_to 'Back', events_path %>
     </div>
     <div id="event-map-right">
