@@ -1,4 +1,4 @@
-// request("GET", "/tasks", null).success()
+// jQuery syntax used for the chat application.
 function request(method, url, data){
   return $.ajax({
     method: method,
@@ -12,17 +12,14 @@ function appendNewTask(chat){
   var someDate = new Date(chat.created_at);
     someDate = someDate.getTime();
   $('<li><strong>'+chat.username+"</strong>: "+chat.chat_message+
-    '<span class="destroy" data-chat-id="'+chat.id + '" data-time="' + someDate + '"> X</span></li>').appendTo("#todo-list")
+    '<span class="destroy" data-chat-id="'+chat.id + '" data-time="' + someDate + '"> X</span></li>').appendTo("#chat-list")
 }
 
 function createChat(){
-  // debugger;
-  
   request("POST", "/chats", {
     chat: {
       chat_message: $("#new-todo-chat").val(),
       username: $("#username").val()
-      // created_at: $("#c_timestamp").val()
     }
   }).success(function(data){
     // Semicolons required here because it's calling on two different functions within this method.
@@ -30,8 +27,6 @@ function createChat(){
     appendNewTask(data);
   })
 }
-
-
 
 function destroyTask(){
   $this = $(this) // since this is jquery whereas native javascript is _this = this.
@@ -42,14 +37,10 @@ function destroyTask(){
   })
 }
 
-
 function getChats(){
-  // console.log('Gets chats')
-
   request("GET", "/chats", { created_at: $('li').last().find('span').data('time')}).success(function(data){
     $.each(data, function(i, task){
         appendNewTask(task)
-
     })
   })
 }
@@ -59,17 +50,11 @@ function updateChatBox(){
 }
 
 $(function(){
-
-
   getChats();
-
   updateChatBox();
-
-  $("#todo-list").on("click", ".destroy", destroyTask)
-
+  $("#chat-list").on("click", ".destroy", destroyTask)
   $("#new-todo-chat").on("keypress", function(event){
     if(event.which == '13')
       createChat();
-    // console.log('hi')
   })
 })
