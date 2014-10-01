@@ -30,26 +30,19 @@
       $scope.status = {
         isopen: false
       };
-      $scope.toggled = function(open) {
-        console.log('Dropdown is now: ', open);
-      };
       $scope.toggleDropdown = function($event) {
         $event.preventDefault();
         $event.stopPropagation();
         $scope.status.isopen = !$scope.status.isopen;
       };
 
-
       // Events
       $scope.events = gon.events
-    
       $scope.selectedEvent = gon.selectedEvent
-      //console.log($scope.ev)
 
       // Google maps
       $scope.positions =[ [51.544543, -0.0643581], [51.525026, -0.090486], [51.522563, -0.110554] ]
-
-
+      
       $scope.map
       $scope.markers = {}
       $scope.shapes = {}
