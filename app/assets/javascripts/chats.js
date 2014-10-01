@@ -18,12 +18,12 @@ function appendNewTask(chat){
 function createChat(){
   request("POST", "/chats", {
     chat: {
-      chat_message: $("#new-todo-chat").val(),
+      chat_message: $("#new-chat-line").val(),
       username: $("#username").val()
     }
   }).success(function(data){
     // Semicolons required here because it's calling on two different functions within this method.
-    $("#new-todo-chat").val("");
+    $("#new-chat-line").val("");
     appendNewTask(data);
   })
 }
@@ -53,7 +53,7 @@ $(function(){
   getChats();
   updateChatBox();
   $("#chat-list").on("click", ".destroy", destroyTask)
-  $("#new-todo-chat").on("keypress", function(event){
+  $("#new-chat-line").on("keypress", function(event){
     if(event.which == '13')
       createChat();
   })
