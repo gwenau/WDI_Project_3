@@ -1,7 +1,11 @@
 <div id="user-page-main-container">
   <div id="left1">
     <div id="main-profile-pic">
-      <%= image_tag(@user.image, width: 220, alt: "anonymous.jpg") %>
+      <% if @user.image && @user.image != "" %>
+        <%= image_tag(@user.image, width: 220) %>
+      <% else %>
+        <img src="/images/anonymous.jpg" width="220"/>
+      <% end %>
     </div>
       <div class="move-left">
         <h1><%= @user.name %></h1>
@@ -56,22 +60,22 @@
   </div>
 </div>
 <div id="user-upcoming-events">
-
   <div class="weather-api">
-    <br>
     Temperature in London: {{ weatherData }} degrees celsius
-    <br>
     <br>
     <br>
   </div>
   <div id="upcoming-eventsx2">
     <div class="upcoming-event">
       <a href="http://lumnee-app.herokuapp.com/<%= @upcoming_event_sample_1.id %>" target="_blank"><h3><%= @upcoming_event_sample_1.name %></h3></a>
+      <p><%= @upcoming_event_sample_1.description %></p>
     </div>
     <div id="splitter">
     </div>
     <div class="upcoming-event">
-      <a href="http://lumnee-app.herokuapp.com/<%= @upcoming_event_sample_2.id %>" target="_blank"><h3><%= @upcoming_event_sample_2.name %></h3></a>
+      <a href="http://lumnee-app.herokuapp.com/<%= @upcoming_event_sample_2.id %>" target="_blank"><h3><%= @upcoming_event_sample_2.name %></h3>
+      </a>
+      <p><%= @upcoming_event_sample_2.description %></p>
     </div>
   </div>
   <!-- Feedzilla Widget BEGIN -->

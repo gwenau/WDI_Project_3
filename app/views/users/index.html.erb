@@ -17,7 +17,13 @@
         
           
             <!-- <td><%#= user.group_id %></td> -->
-            <td><%= image_tag(user.image, width: 150, :class => "style_image", alt: "/../../../assets/images/anonymous.jpg") %></td>
+            <td>
+                <% if user.image && user.image != "" %>
+                    <%= image_tag(user.image, width: 150, :class => "style_image") %>
+                <% else %>
+                    <img src="/images/anonymous.jpg" width="150" class="style_image"/>
+                <% end %>
+            </td>
             <td><h3><%= link_to user.name, user_path(user) %></h3></td>
             <td>
                 <table>

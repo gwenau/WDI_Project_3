@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     gon.selectedUser = @user 
     @upcoming_event_sample_1 = Event.all.sample
-
+   
     @upcoming_event_sample_2 = Event.all.sample
 
     # binding.pry
