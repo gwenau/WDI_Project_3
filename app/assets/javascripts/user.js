@@ -1,8 +1,9 @@
+// AngularJS used for all areas of this app where possible.
 (function() {
 
   var app = angular.module('lumneeApp', ['ui.bootstrap', 'ngMap']);
- 
-// $http to call on the api's.
+  // $http to call on the api's.
+
   app.controller('lumneeController' , ["$scope", "$http", function($scope, $http) {
 
       // Temperature api currently hardcoded to London in degrees celcius
@@ -26,11 +27,6 @@
       }
 
       // Drop down menu
-      $scope.items = [
-        'The first choice!',
-        'And another choice for you.',
-        'but wait! A third!'
-      ];
       $scope.status = {
         isopen: false
       };
