@@ -23,6 +23,7 @@ gem 'aws-sdk'
 gem 'gon'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin-oauth2'
+gem 'geocoder'
 
 group :development do
   gem 'pry'

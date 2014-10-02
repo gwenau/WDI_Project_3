@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140917143509) do
+ActiveRecord::Schema.define(:version => 20141002202447) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20140917143509) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.string   "lat_long"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "events_users", :id => false, :force => true do |t|
