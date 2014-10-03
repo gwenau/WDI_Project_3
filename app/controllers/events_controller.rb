@@ -83,4 +83,10 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def attend
+    @event = Event.find(params[:id])
+    @event.users << current_user
+    @event.save
+  end
 end

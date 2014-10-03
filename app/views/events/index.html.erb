@@ -28,6 +28,7 @@
                 <% if can? :delete, @event %>
                    |<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
+                <%#= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
             </div>
           </div>
         <% end %>

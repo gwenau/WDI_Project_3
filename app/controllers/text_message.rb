@@ -16,6 +16,6 @@ class TextMessage
       body: @content,
       to: @to_number,
       from: ENV["TWILIO_NUM"]
-    )
+      )
   end
 end
