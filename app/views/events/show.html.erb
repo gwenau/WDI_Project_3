@@ -65,7 +65,7 @@
         <b>Phone:</b>
         <%= @event.phone %>
       </p>
-      <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
+      <%= button_to 'Attend', attend_event_path(@event), method: :post %>
       <% if can? :edit, @event %>
         <%= link_to 'Edit', edit_event_path(@event) %> |
       <% end %>
