@@ -207,6 +207,7 @@ p {
   border: 1.5px solid #cfcfcf;
   box-shadow: 10px 10px 5px #888888;
   margin: 70px;
+  padding: 20px;
 }
 
 .event-carousel {
@@ -227,6 +228,7 @@ p {
   background-color: white;
   width: 410px;
   height: 300px;
+  text-align: center;
 }
 
 #event-map-right {
@@ -267,7 +269,10 @@ p {
   margin: auto;
   background-color: white;
   border: 2px dotted #428bca;
+/*  padding: 25px;*/
 }
+
+
 
 #event-goers {
   width: 1010px;

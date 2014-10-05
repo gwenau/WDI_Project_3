@@ -6,17 +6,18 @@
 </div>
 <div class="index-div">
     <h1>Listing events</h1>
-    <%= link_to 'New Event', new_event_path %>
+    <%= link_to 'Create a New Event', new_event_path %>
   
         <% @events.each do |event| %>
           <div class="event-individual">
-            <div class="event-carousel">
+            <!-- I would like to implement this for the future -->
+<!--             <div class="event-carousel">
                 Image or carousel of images.
-            </div>
+            </div> -->
             <div>
                 <h3><%= link_to event.name, event %></h3>
-                <%#= event.event_date %><br />
-                <%#= event.event_time %><br />
+                <%= event.description %><br />
+                <%= event.event_time.to_s(:short) %><br />
                 <%= event.venue %><br />
                 <!-- consider putting in scope in here -->
                 

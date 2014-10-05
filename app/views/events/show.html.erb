@@ -1,25 +1,15 @@
 <div class="index-div">
   <div class="events-map-container">
     <div id="event-map-left">
+        <h3><%= @event.name %></h3>
       <p>
-        <b>Name:</b>
-        <%= @event.name %>
-      </p>
-
-      <p>
-        <b>Description:</b>
         <%= @event.description %>
       </p>
 
       <p>
-        <b>Event date:</b>
-        <%= @event.event_date %>
+        <%= @event.event_time.to_s(:short) %>
       </p>
-
-      <p>
-        <b>Event time:</b>
-        <%= @event.event_time %>
-      </p>
+      <br>
 
 <!--       <p>
         <b>Scope:</b>
@@ -37,35 +27,26 @@
       </p> -->
 
       <p>
-        <b>Venue:</b>
-        <%= @event.venue %>
+        <b><%= @event.venue %></b>
       </p>
-
       <p>
-        <b>Address line 1:</b>
         <%= @event.address_line_1 %>
       </p>
-
+      <% if @event.address_line_2 %>
+        <p>
+          <%= @event.address_line_2 %>
+        </p>
+      <% end %>
       <p>
-        <b>Address line 2:</b>
-        <%= @event.address_line_2 %>
-      </p>
-
-      <p>
-        <b>City:</b>
         <%= @event.city %>
-      </p>
-
-      <p>
-        <b>Postcode:</b>
         <%= @event.postcode %>
       </p>
-
       <p>
-        <b>Phone:</b>
-        <%= @event.phone %>
+        Ph: <%= @event.phone %>
       </p>
-      <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
+      <br>
+      <div class="blue-button"><%= button_to 'Attend', attend_event_path(@event), method: :post %></div>
+      <br>
       <% if can? :edit, @event %>
         <%= link_to 'Edit', edit_event_path(@event) %> |
       <% end %>
