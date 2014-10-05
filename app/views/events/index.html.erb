@@ -24,7 +24,6 @@
                     <p>Going</p>
                 <% else %>
                     <%= button_to 'Attend', attend_event_path(event), method: :post %> 
-                    <%= event.users.shuffle.limit(3) %> and more are going to this event
                 <% end %>
                 <br>
                 <% if can? :edit, @event %>

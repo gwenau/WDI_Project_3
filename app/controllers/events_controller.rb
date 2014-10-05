@@ -89,4 +89,11 @@ class EventsController < ApplicationController
     @event.users << current_user
     @event.save
   end
+
+  def not_going
+    @event = Event.find(params[:id])
+    @event.users.delete(current_user)
+    @event.save
+  end
+
 end

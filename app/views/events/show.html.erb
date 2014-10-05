@@ -46,7 +46,7 @@
       </p>
       <br>
       <% if @event.users.include? current_user %>
-        <p>Going</p>
+        <p>Going <%= button_to 'Not Going', not_going_event_path(@event), method: :delete %></p>
       <% else %> 
         <%= button_to 'Attend', attend_event_path(@event), method: :post %>
       <% end %>
