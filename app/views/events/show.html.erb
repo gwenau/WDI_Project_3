@@ -45,7 +45,11 @@
         Ph: <%= @event.phone %>
       </p>
       <br>
-      <div class="blue-button"><%= button_to 'Attend', attend_event_path(@event), method: :post %></div>
+      <% if @event.users.include? current_user %>
+        <p>Going</p>
+      <% else %> 
+        <%= button_to 'Attend', attend_event_path(@event), method: :post %>
+      <% end %>
       <br>
       <% if can? :edit, @event %>
         <%= link_to 'Edit', edit_event_path(@event) %> |
@@ -89,6 +93,7 @@
     </div>
   </div>
   <div class="empty-div">
+    <br>
   </div>
 </div>
 <br />
