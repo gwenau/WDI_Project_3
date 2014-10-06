@@ -50,7 +50,6 @@
       <% else %> 
         <%= button_to 'Attend', attend_event_path(@event), method: :post %>
       <% end %>
-      <br>
       <% if can? :edit, @event %>
         <%= link_to 'Edit', edit_event_path(@event) %> |
       <% end %>
