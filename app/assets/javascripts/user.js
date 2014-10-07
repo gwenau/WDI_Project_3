@@ -52,6 +52,12 @@
         maps[0].setCenter()
       });
 
+      $scope.errorMessage = "Sorry, no data available yet"
+
+      $scope.open = function() {
+        return $scope.errorMessage
+      };
+
   }])
 
 })();

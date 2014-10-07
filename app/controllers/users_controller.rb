@@ -19,10 +19,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     gon.selectedUser = @user 
+    
     @upcoming_event_sample_1 = Event.all.sample
    
     @upcoming_event_sample_2 = Event.all.sample
 
+    if @upcoming_event_sample_1 == @upcoming_event_sample_2
+      redirect_to user_path(current_user.id) and return user_path(current_user.id)
+    end
+    
     # binding.pry
     respond_to do |format|
       format.html # show.html.erb
