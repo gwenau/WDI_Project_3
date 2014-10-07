@@ -1,5 +1,5 @@
 AlumniApp::Application.routes.draw do
-  resources :comments
+  # resources :comments
 
 
   resources :chats
@@ -14,7 +14,9 @@ AlumniApp::Application.routes.draw do
   resources :events do
     post 'attend', on: :member
     delete 'not_going', on: :member
-    resources :comments
+    resources :comments do
+      post '/like', to: "comment#like"
+    end
   end
 
   resources :groups

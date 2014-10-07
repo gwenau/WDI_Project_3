@@ -85,4 +85,12 @@ class CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def like
+    @event = Event.find(params[:id])
+    @event.comment.like_count += 1 
+    @event.save
+    redirect_to event_path(@event)
+  end
+
 end
