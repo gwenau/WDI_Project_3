@@ -15,7 +15,7 @@ AlumniApp::Application.routes.draw do
     post 'attend', on: :member
     delete 'not_going', on: :member
     resources :comments do
-      post '/like', to: "comment#like"
+      post '/', to: "comments#like"
     end
   end
 

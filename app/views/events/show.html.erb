@@ -105,11 +105,22 @@
   </div>
   <div>
     <% @event.comments.each do |comment| %>
-      <div>
-        <%= image_tag(comment.user.image, size: "50x50") %>
-        <b><%= comment.user.name %></b>
-        <%= comment.comment %> 
-        <%= button_to 'Like', event_comment_path([@event, comment]), method: :post %>
+      <div class="centre">
+        <table>
+          <tr>
+            <td style="min-width:400px">
+              <%= image_tag(comment.user.image, size: "50x50") %>
+              <b><%= comment.user.name %></b>
+              <%= comment.comment %>
+            </td>
+            <td>
+              <%= button_to 'Like', event_comment_path(@event, comment.id), method: :post %>
+            </td>
+            <td>
+              Like count: <%= comment.like_count %>
+            </td>
+          </tr>
+        </table>
       </div>
     <% end %>
   </div>

@@ -87,10 +87,17 @@ class CommentsController < ApplicationController
   end
 
   def like
-    @event = Event.find(params[:id])
-    @event.comment.like_count += 1 
-    @event.save
+    @event = Event.find(params[:event_id])
+    @comment = Comment.find(params[:comment_id])
+    @comment.like_count = @comment.like_count.to_i + 1
+    @comment.update_attributes(params[:comment])
     redirect_to event_path(@event)
+
+    # @song = Song.find(params[:song_id])
+    # @comment = Comment.find(params[:id])
+    # # The update_attributes automatically saves as well.
+    # @comment.update_attributes(params[:comment])
+    #   redirect_to song_path(@song)
   end
 
 end
