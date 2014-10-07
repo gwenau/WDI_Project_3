@@ -94,6 +94,24 @@
   <div class="empty-div">
     <br>
   </div>
+  <div>
+      <%= form_for ([@event, @comment]) do |f| %>
+    <p>
+      <%= f.label :comment %>
+      <%= f.text_area :comment, :size=>"100*1" %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+  </div>
+  <div>
+    <% @event.comments.each do |comment| %>
+      <div>
+        <%= image_tag(comment.user.image, size: "50x50") %>
+        <b><%= comment.user.name %></b>
+        <%= comment.comment %>
+      </div>
+    <% end %>
+  </div>
 </div>
 <br />
 <br />

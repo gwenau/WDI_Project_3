@@ -1,4 +1,7 @@
 AlumniApp::Application.routes.draw do
+  resources :comments
+
+
   resources :chats
 
   root to: "events#index"
@@ -11,6 +14,7 @@ AlumniApp::Application.routes.draw do
   resources :events do
     post 'attend', on: :member
     delete 'not_going', on: :member
+    resources :comments
   end
 
   resources :groups

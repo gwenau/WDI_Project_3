@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :events, :join_table => "events_users"
   belongs_to :chat
   has_many :authentications
+  has_many  :comments
 
   # In order to activate the ability model properly.
   def role?(role)
