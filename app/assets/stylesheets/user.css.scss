@@ -221,8 +221,7 @@ p {
 }
 
 #event-update-div {
-  width: $main-content-width;
-  margin: auto;
+  @include standard-format;
 }
 
 #events-weather-api {
@@ -249,15 +248,13 @@ p {
 }
 
 .index-div {
-  width: $main-content-width;
-  margin: auto;
+  @include standard-format;
   background-color: $default-background-colour;
   border: $border-theme-pattern;
 }
 
 #event-goers {
-  width: $main-content-width;
-  margin: auto;
+  @include standard-format;
 }
 
 .event-goer {
@@ -271,13 +268,11 @@ p {
 
 /* Group page, hopefully waypoint only. */
 .group-header {
-  width: $main-content-width;
-  margin: auto;
+  @include standard-format;
 }
 
 .group-group {
-  width: $main-content-width;
-  margin: auto;
+  @include standard-format;
 }
 
 .group-div {

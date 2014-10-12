@@ -7,3 +7,8 @@ $complementary-background-colour: #428bca;
 $default-background-colour: white;
 $border-theme-pattern: 2px dotted $complementary-background-colour;
 $user-page-frame: 15px groove $complementary-background-colour;
+
+@mixin standard-format {
+  width: $main-content-width;
+  margin: auto;
+}
