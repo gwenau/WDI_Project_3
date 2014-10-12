@@ -1,14 +1,12 @@
-  // Place all the styles related to the User controller here.
+// Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  background-color: #d9e7f4;
-  font-family: 'Josefin Sans', sans-serif;
-}
+@import "_base.css.scss";
 
-.for-photo {
-  /*height: 150px;*/
+body {
+  background-color: $page-colour;
+  font-family: $page-font;
 }
 
 header {
