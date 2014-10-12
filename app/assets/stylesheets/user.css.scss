@@ -10,21 +10,19 @@ body {
 }
 
 header {
-/*  margin-top: 60px;
-  margin-bottom: 60px;*/
   text-align: center;
+  color: white;
   font-size: 150px;
   font-weight: bold;
-  color: white;
   text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
 }
 
 .dotted {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  padding-top: 14px;
-  padding-bottom: 27px;
-/*  padding: 2.25em 1.6875em;*/
+  width: $main-content-width;
+  margin: 40px auto 20px; 
+  padding: 14px 0px 27px;
+  border-top: $header-dot-border;
+  border-bottom: $header-dot-border;
   background-image: -webkit-repeating-radial-gradient(center center, rgba(66, 139, 202, 1), rgba(66, 139, 202, 1) 1px, transparent 1px, transparent 100%);
   background-image: -moz-repeating-radial-gradient(center center, rgba(66, 139, 202, 1), rgba(66, 139, 202, 1) 1px, transparent 1px, transparent 100%);
   background-image: -ms-repeating-radial-gradient(center center, rgba(66, 139, 202, 1), rgba(66, 139, 202, 1) 1px, transparent 1px, transparent 100%);
@@ -32,21 +30,14 @@ header {
   -webkit-background-size: 6px 6px;
   -moz-background-size: 6px 6px;
   background-size: 6px 6px;
-  border-top: 12px solid #dcdcdc;
-  border-bottom: 12px solid #dcdcdc;
-  width: 1010px;
-  margin: auto;
-  margin-top: 40px;
 }
 
 h1 {
   margin: 0px;
-
 }
 
 h2 {
-  background: #428bca;
-  /*color: white; Not working at the moment. */
+  background: $complementary-background-colour;
 }
 
 p {
@@ -55,7 +46,7 @@ p {
 
 /* Main page pre div */
 #login-logoff-and-dropdown {
-  width: 1010px;
+  width: $main-content-width;
   height: 70px;
   margin: auto;
 }
@@ -72,21 +63,20 @@ p {
 
 /* Main page first div */
 #user-page-main-container {
-  width: 1010px;
+  width: $main-content-width;
   height: 450px;
-  background-color: white;
+  background-color: $default-background-colour;
   margin: auto;
-  /*box-shadow: 10px 10px 5px #888888;*/
-  border-left: 2px dotted #428bca;
-  border-top: 2px dotted #428bca;
-  border-right: 2px dotted #428bca;
+  border-left: $border-theme-pattern;
+  border-top: $border-theme-pattern;
+  border-right: $border-theme-pattern;
 }
 
 #main-profile-pic {
   width: 250px;
   height: 250px;
   background: black;
-  border: 15px groove #428bca;
+  border: $user-page-frame;
   margin-left: 25px;
   margin-top: 25px;
 }
@@ -117,31 +107,25 @@ p {
 
 #right1 {
   float: right;
-/*  width: 360px;*/
   margin-right: 40px;
   height: 300px
 }
 
 .item {
-  border: 15px groove #428bca;
+  border: $user-page-frame;
   width: 630px;
   height: 365px;
 }
 
-/*.item img {
-  width: 630px;
-  height: 300px;
-}*/
-
 /* Main page 2nd div */
 #user-upcoming-events {
-  width: 1010px;
+  width: $main-content-width;
   height: 450px;
-  background-color: white;
+  background-color: $default-background-colour;
   margin: auto;
-  border-left: 2px dotted #428bca;
-  border-bottom: 2px dotted #428bca;
-  border-right: 2px dotted #428bca;
+  border-left: $border-theme-pattern;
+  border-bottom: $border-theme-pattern;
+  border-right: $border-theme-pattern;
 }
 
 .weather-api {
@@ -175,7 +159,6 @@ p {
   width: 300px;
   height: 395px;
   float: left;
-  /*background-color: gray;*/
   margin: 5px;
   background: #b5bdc8; /* Old browsers */
   background: -moz-linear-gradient(top,  #b5bdc8 0%, #828c95 36%, #28343b 100%); /* FF3.6+ */
@@ -220,7 +203,7 @@ p {
 
 /* Event show page */
 .events-map-container {
-  width: 1010px;
+  width: $main-content-width;
   min-height: 300px;
   margin: auto;
 }
@@ -240,14 +223,14 @@ p {
 }
 
 #event-update-div {
-  width: 1010px;
+  width: $main-content-width;
   margin: auto;
 }
 
 #events-weather-api {
   width: 505px;
   float: left;
-  background-color: #428bca;
+  background-color: $complementary-background-colour;
   font-size: 25px;
   color: white;
   height: 89px;
@@ -257,7 +240,7 @@ p {
 #event-text-messaging-area {
   width: 500px;
   float: left;
-  background-color: #428bca;
+  background-color: $complementary-background-colour;
   color: black;
   margin-right: 1px;
   min-height: 89px;
@@ -268,17 +251,14 @@ p {
 }
 
 .index-div {
-  width: 1010px;
+  width: $main-content-width;
   margin: auto;
-  background-color: white;
-  border: 2px dotted #428bca;
-/*  padding: 25px;*/
+  background-color: $default-background-colour;
+  border: $border-theme-pattern;
 }
 
-
-
 #event-goers {
-  width: 1010px;
+  width: $main-content-width;
   margin: auto;
 }
 
@@ -286,19 +266,19 @@ p {
   height: 120px;
   width: 335px;
   float: left;
-  background-color: white;  
+  background-color: $default-background-colour;  
   font-size: 18px;
   padding: 15px;
 }
 
 /* Group page, hopefully waypoint only. */
 .group-header {
-  width: 1010px;
+  width: $main-content-width;
   margin: auto;
 }
 
 .group-group {
-  width: 1010px;
+  width: $main-content-width;
   margin: auto;
 }
 
@@ -310,15 +290,8 @@ p {
   clear: both;
 }
 
-/* .event-goer added to each user */ 
-
-/* User index page */
-/*#user-index-div {
-  text-align: center;
-}*/
-
 #user-index {
-  background-color: white;
+  background-color: $default-background-colour;
 }
 
 #table-format {
