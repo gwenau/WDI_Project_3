@@ -100,9 +100,7 @@ p {
   float: right;
   text-align: center;
   font-size: 40px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  margin-right: 40px;
+  margin: 30px 40px 20px 0px;
 }
 
 #right1 {
@@ -320,7 +318,7 @@ p {
 }
 
 #chat-input {
-    margin: 70px;
+  margin: 70px;
 }
 
 /* Devise pages*/
