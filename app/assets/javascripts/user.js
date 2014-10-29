@@ -38,24 +38,11 @@
       // Events
       $scope.events = gon.events
       $scope.selectedEvent = gon.selectedEvent
-
-      // Google maps
-      $scope.positions =[ [51.544543, -0.0643581], [51.525026, -0.090486], [51.522563, -0.110554] ]
       
-      $scope.map
-      $scope.markers = {}
-      $scope.shapes = {}
-      $scope.markerCluster = {}
-      // mapsInitialized
-      $scope.$on('mapsInitialized', function(event, maps) {
-        maps[0].setCenter()
-      });
-
-      $scope.errorMessage = "Sorry, no data available yet"
-
-      $scope.open = function() {
-        return $scope.errorMessage
-      };
+      // // mapsInitialized
+      // $scope.$on('mapsInitialized', function(event, maps) {
+      //   maps[0].setCenter()
+      // });
 
   }])
 
